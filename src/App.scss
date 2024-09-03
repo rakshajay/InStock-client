@@ -1,5 +1,6 @@
 @use "./styles/partials/mixins";
 @use "./styles/partials/variables";
+@use "./Styles/fonts";
 
 body {
   background-color: $background-grey;
