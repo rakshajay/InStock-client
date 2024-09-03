@@ -1,12 +1,11 @@
 import "./header.scss";
 
 function Header() {
-    return (
-      <header>
-        
-      </header>
-    );
-  }
-  
-  export default Header;
-  
+  return (
+    <header>
+      <div></div>
+    </header>
+  );
+}
+
+export default Header;
