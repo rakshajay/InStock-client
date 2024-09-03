@@ -1,2 +1,6 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
+
+.header {
+  background-color: $background-graphite;
+}
