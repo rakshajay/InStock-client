@@ -1,6 +1,8 @@
 import "./App.scss";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+
 // import xyz component from 'component'...
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
             <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </>
   );
