@@ -1,6 +1,6 @@
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./Components/Header/Header.jsx";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Header from "./Components/Header/Header";
 // import xyz component from 'component'...
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
               path="/warehouse/:warehouseId/inventory/add"
               element={<ItemAdd />}
             />
+            <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
         </div>
       </BrowserRouter>
