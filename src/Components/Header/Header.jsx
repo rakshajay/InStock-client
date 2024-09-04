@@ -9,10 +9,10 @@ function Header() {
         <img src={logoImg} alt="" />
       </div>
       <div className="header__wrapper-buttons">
-        <Link to="/warehouses" className="header__link">
+        <Link to={"/"} className="header__link">
           <button className="header__button">Warehouses</button>
         </Link>
-        <Link to="/inventory" className="header__link">
+        <Link to={"/warehouse/:warehouseId/inventory"} className="header__link">
           <button className="header__button">Inventory</button>
         </Link>
       </div>
