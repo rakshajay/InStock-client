@@ -17,6 +17,18 @@
 
     &-label {
       margin-top: 16px;
+      margin-bottom: 4px;
+    }
+
+    &-input {
+      height: 36px;
+      border-radius: 20px;
+      padding: 0 16px;
+      border: 1px solid $secondary-color-clud;
+
+      @include tablet {
+        height: 38px;
+      }
     }
   }
 
@@ -28,5 +40,6 @@
 
   &__buttons {
     margin-top: 16px;
+    background-color: $background-grey;
   }
 }

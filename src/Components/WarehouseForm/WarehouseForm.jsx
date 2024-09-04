@@ -12,6 +12,7 @@ function WarehouseForm() {
           type="text"
           name="warehouseName"
           placeholder="Warehouse Name"
+          required
         />
         <label className="warehouse__details-label">Street Address</label>
         <input
@@ -19,6 +20,7 @@ function WarehouseForm() {
           type="text"
           name="streetAddress"
           placeholder="Street Address"
+          required
         />
         <label className="warehouse__details-label">City</label>
         <input
@@ -26,6 +28,7 @@ function WarehouseForm() {
           type="text"
           name="city"
           placeholder="City"
+          required
         />
         <label className="warehouse__details-label">Country</label>
         <input
@@ -33,6 +36,7 @@ function WarehouseForm() {
           type="text"
           name="country"
           placeholder="Country"
+          required
         />
       </div>
 
@@ -44,6 +48,7 @@ function WarehouseForm() {
           type="text"
           name="contactName"
           placeholder="Contact Name"
+          required
         />
         <label className="warehouse__details-label">Position</label>
         <input
@@ -51,6 +56,7 @@ function WarehouseForm() {
           type="text"
           name="position"
           placeholder="Position"
+          required
         />
         <label className="warehouse__details-label">Phone Number</label>
         <input
@@ -58,6 +64,7 @@ function WarehouseForm() {
           type="text"
           name="phoneNumber"
           placeholder="Phone Number"
+          required
         />
         <label className="warehouse__details-label">Email</label>
         <input
@@ -65,6 +72,7 @@ function WarehouseForm() {
           type="email"
           name="email"
           placeholder="Email"
+          required
         />
       </div>
 
