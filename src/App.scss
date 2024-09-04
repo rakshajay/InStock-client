@@ -1,5 +1,6 @@
-@use "./styles/partials/mixins";
-@use "./styles/partials/variables";
+@use "./Styles/mixins" as *;
+@use "./Styles/variables" as *;
+@use "./Styles/fonts" as *;
 
 body {
   background-color: $background-grey;
@@ -68,4 +69,15 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+button {
+  border: none;
+  border-radius: 20px;
+  height: 36px;
+  padding: 0 16px;
+
+  @include tablet {
+    height: 38px;
+  }
 }
