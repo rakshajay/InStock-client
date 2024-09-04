@@ -1,6 +1,6 @@
 import "./header.scss";
 import { Link } from "react-router-dom";
-import logoImg from "../Assets/Logo/InStock-Logo_2x.png";
+import logoImg from "../Assets/Logo/InStock-Logo_1x.png";
 
 function Header() {
   return (
