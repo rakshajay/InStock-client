@@ -1,0 +1,67 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.warehouse {
+  &__add {
+    background-color: $primary-color-white;
+    margin: -30px 16px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px $secondary-color-clud;
+
+    @include tablet {
+      margin: -73px 32px 0;
+    }
+
+    @include desktop {
+      margin: -73px 120px 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    padding-left: 16px;
+
+    @include tablet {
+      border-bottom: 1px solid $secondary-color-clud;
+    }
+
+    @include desktop {
+      padding-left: 32px;
+    }
+  }
+
+  &__title {
+    padding-left: 5px;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 70px;
+    margin-top: 16px;
+    background-color: $background-grey;
+
+    @include tablet {
+      justify-content: end;
+      padding-right: 32px;
+    }
+  }
+
+  &__button {
+    width: 110px;
+    font-size: 9px;
+    background-color: $primary-color-white;
+    border: 1px solid $secondary-color-clud;
+
+    @include tablet {
+      width: auto;
+      font-size: 13px;
+    }
+
+    &-submit {
+      color: $primary-color-white;
+      background-color: $primary-color-instock-indigo-blue;
+    }
+  }
+}
