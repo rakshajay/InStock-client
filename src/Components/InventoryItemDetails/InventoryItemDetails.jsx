@@ -32,7 +32,7 @@ function InventoryItemDetails({itemData}) {
         setStock();
 
       } catch (e) {
-        console.log('error getting warehouses list', e);
+        console.log('error getting inventory item details', e);
       }
     }
 
