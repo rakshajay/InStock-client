@@ -7,7 +7,21 @@
     margin: -30px 16px 0;
     border-radius: 5px;
     box-shadow: 1px 1px 5px $secondary-color-clud;
+
+    @include tablet {
+      margin: -73px 32px 0;
+    }
   }
+
+  &__wrapper {
+    display: flex;
+    padding-left: 16px;
+
+    @include tablet {
+      border-bottom: 1px solid $secondary-color-clud;
+    }
+  }
+
   &__buttons {
     display: flex;
     align-items: center;
@@ -16,6 +30,11 @@
     height: 70px;
     margin-top: 16px;
     background-color: $background-grey;
+
+    @include tablet {
+      justify-content: end;
+      padding-right: 32px;
+    }
   }
 
   &__button {
@@ -23,6 +42,11 @@
     font-size: 9px;
     background-color: $primary-color-white;
     border: 1px solid $secondary-color-clud;
+
+    @include tablet {
+      width: auto;
+      font-size: 13px;
+    }
 
     &-submit {
       color: $primary-color-white;
