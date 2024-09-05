@@ -1,0 +1,32 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.warehouse {
+  &__edit {
+    background-color: $primary-color-white;
+    margin: -30px 16px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px $secondary-color-clud;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 70px;
+    margin-top: 16px;
+    background-color: $background-grey;
+  }
+
+  &__button {
+    width: 110px;
+    font-size: 9px;
+    background-color: $primary-color-white;
+    border: 1px solid $secondary-color-clud;
+
+    &-submit {
+      color: $primary-color-white;
+      background-color: $primary-color-instock-indigo-blue;
+    }
+  }
+}

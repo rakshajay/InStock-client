@@ -5,12 +5,14 @@ import arrowImage from "../Assets/Icons/arrow_back-24px.svg";
 function AddNewWarehouse() {
   return (
     <div className="warehouse__add">
-      <img
-        className="warehouse__icon"
-        src={arrowImage}
-        alt="Arrow Icon to go previous page"
-      />
-      <h2 className="warehouse__title">Add New Warehouse</h2>
+      <div className="warehouse__wrapper">
+        <img
+          className="warehouse__icon"
+          src={arrowImage}
+          alt="Arrow Icon to go previous page"
+        />
+        <h2 className="warehouse__title">Add New Warehouse</h2>
+      </div>
       <WarehouseForm />
       <div className="warehouse__buttons">
         <button

@@ -10,8 +10,8 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <AddNewWarehouse />
         <div id="app__body">
+          <AddNewWarehouse />
           {/* <Routes>
             <Route path="/" element={<WarehouseList />} />
             <Route
