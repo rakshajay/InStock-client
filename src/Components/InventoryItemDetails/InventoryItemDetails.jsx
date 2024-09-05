@@ -14,13 +14,14 @@ function InventoryItemDetails({itemData}) {
 
   const {itemId} = useParams();
 
-  // const setStock = () =>{
-  //   if (itemDetails.status === "In Stock"){
-  //     setStockTag("item-status--inStock")
-  //   } else {
-  //     setStockTag("item-status--outOfStock")
-  //   }
-  // }
+  const setStock = () =>{
+    if (itemDetails.quantity > 0){
+      setStockTag("item-status--inStock")
+    } else {
+      setStockTag("item-status--outOfStock")
+    }
+    console.log(stockTag)
+  }
 
   useEffect(() => {
     const getItemDetails = async () => {
@@ -28,7 +29,7 @@ function InventoryItemDetails({itemData}) {
         const response = await axios.get(`http://localhost:8080/inventories/${itemId}`);
         console.log(response.data)
         setItemDetails(response.data);
-        // setStock();
+        setStock();
 
       } catch (e) {
         console.log('error getting warehouses list', e);
@@ -43,7 +44,7 @@ function InventoryItemDetails({itemData}) {
       <section className="main-container">
         <div className="main-container__row-top">
           <div className="main-container__row-title">
-            <Link to=''><img src={backArrow} /></Link>
+            <Link to='/warehouse/:warehouseId/inventory/'><img src={backArrow} /></Link>
             <h1 className="item-title">{itemDetails.item_name}</h1>
           </div>
           <Link to="/warehouse/:warehouseId/inventory/:itemId/edit"><button className="primary-button small-button"><img src={mobileEdit}/></button></Link>
@@ -64,7 +65,7 @@ function InventoryItemDetails({itemData}) {
               <div className="main-container__info-right">
                 <div> 
                   <p className="item-subheader">Status:</p>
-                  <p >{itemDetails.status}</p> 
+                  <p className={`item-status ${stockTag}`} >{itemDetails.status}</p> 
                 </div>
                 <div>
                   <p className="item-subheader">Warehouse:</p>

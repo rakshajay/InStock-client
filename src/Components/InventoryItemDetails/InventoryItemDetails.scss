@@ -6,6 +6,7 @@ p{
     @include mobile-p2-body-medium;
     font-weight: 400;
     color: $primary-color-instock-black;
+    margin: 0;
 }
 
 .main-container{
@@ -39,9 +40,9 @@ p{
         justify-content: space-between;
         align-items: flex-start;
         padding: 24px;
+        gap: 16px;
         @include tablet{
             flex-direction: row;
-            gap: 16px;
         }
     }
 
@@ -52,6 +53,7 @@ p{
         justify-content: flex-start;
         width: 100%;
         padding-right:16px;
+        gap: 16px;
         @include tablet{
             border-right: 1px solid $secondary-color-slate;
         }
@@ -62,6 +64,7 @@ p{
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
+        gap: 16px;
     }
 
     &__info-split{
@@ -95,6 +98,7 @@ p{
    text-transform: uppercase;
    font-weight: 600;
    color: $secondary-color-slate;
+   padding-bottom: 8px;
 }
 
 .item-status{
@@ -105,8 +109,6 @@ p{
     border-radius:20px;
     text-transform: uppercase;
     font-weight: 600;
-    // background-color: rgba(21, 132, 99, .07);
-    // color: rgba(21, 132, 99, 1);
     &--inStock{
         background-color: rgba(21, 132, 99, .07);
         color: rgba(21, 132, 99, 1);
@@ -115,6 +117,7 @@ p{
         background-color: rgba(201, 69, 21, .07);
         color: rgba(201, 69, 21, 1)
     }
+
     @include tablet{
         height: 26px;
     }
