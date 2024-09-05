@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   height: 130px;
+  font-family: "Titillium";
 
   @include tablet {
     flex-direction: row;
@@ -36,7 +37,7 @@
 
   &__button {
     background-color: inherit;
-    color: $secondary-color-clud;
+    color: $secondary-color-cloud;
 
     &:hover {
       text-decoration: underline;

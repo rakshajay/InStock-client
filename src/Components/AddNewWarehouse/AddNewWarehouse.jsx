@@ -1,55 +1,35 @@
 import "./AddNewWarehouse.scss";
+import WarehouseForm from "../WarehouseForm/WarehouseForm";
+import arrowImage from "../Assets/Icons/arrow_back-24px.svg";
 
 function AddNewWarehouse() {
-    return (
-      <form>
-        <div className="section">
-          <h2>Warehouse Details</h2>
-          <label>
-            Warehouse Name
-            <input type="text" name="warehouseName" placeholder="Warehouse Name" />
-          </label>
-          <label>
-            Street Address
-            <input type="text" name="streetAddress" placeholder="Street Address" />
-          </label>
-          <label>
-            City
-            <input type="text" name="city" placeholder="City" />
-          </label>
-          <label>
-            Country
-            <input type="text" name="country" placeholder="Country" />
-          </label>
-        </div>
+  return (
+    <div className="warehouse__add">
+      <div className="warehouse__wrapper">
+        <img
+          className="warehouse__icon"
+          src={arrowImage}
+          alt="Arrow Icon to go previous page"
+        />
+        <h2 className="warehouse__title">Add New Warehouse</h2>
+      </div>
+      <WarehouseForm />
+      <div className="warehouse__buttons">
+        <button
+          className="warehouse__button-cancel warehouse__button"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="warehouse__button-submit warehouse__button"
+          type="submit"
+        >
+          +Add Warehouse
+        </button>
+      </div>
+    </div>
+  );
+}
 
-        <div className="section">
-          <h2>Contact Details</h2>
-          <label>
-            Contact Name
-            <input type="text" name="contactName" placeholder="Contact Name" />
-          </label>
-          <label>
-            Position
-            <input type="text" name="position" placeholder="Position" />
-          </label>
-          <label>
-            Phone Number
-            <input type="text" name="phoneNumber" placeholder="Phone Number" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="Email" />
-          </label>
-        </div>
-
-        <div className="buttons">
-          <button type="button" className="cancel-button">Cancel</button>
-          <button type="submit" className="submit-button">+Add Warehouse</button>
-        </div>
-      </form>
-    );
-  }
-  
-  export default AddNewWarehouse;
-  
+export default AddNewWarehouse;

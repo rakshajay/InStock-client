@@ -1,5 +1,5 @@
 import "./header.scss";
-import logoImg from "../Assets/Logo/InStock-Logo_1x.png";
+import logoImg from "/src/Assets/Logo/InStock-Logo_1x.png";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
         <Link to={"/"} className="header__link">
           <button className="header__button">Warehouses</button>
         </Link>
-        <Link to={"/warehouse/:warehouseId/inventory"} className="header__link">
+        <Link to={"/inventory"} className="header__link">
           <button className="header__button">Inventory</button>
         </Link>
       </div>
