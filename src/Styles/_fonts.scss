@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Titillium";
-  src: url(../Components/Assets/Font/TitilliumWeb-Regular.ttf);
+  src: url(./Components/Assets/Font/TitilliumWeb-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Titillium";
-  src: url(../Components/Assets/Font/TitilliumWeb-Bold.ttf);
+  src: url(./Components/Assets/Font/TitilliumWeb-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
   font-family: "Titillium";
-  src: url(../Components/Assets/Font/TitilliumWeb-Italic.ttf);
+  src: url(./Components/Assets/Font/TitilliumWeb-Italic.ttf) format("truetype");
   font-weight: 400;
   font-style: italic;
 }
