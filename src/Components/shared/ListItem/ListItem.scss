@@ -1,0 +1,47 @@
+@use '/src/Styles/variables' as *;
+@use '/src/Styles/mixins' as *;
+
+.list-item {
+
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $secondary-color-cloud;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+
+    &__pair {
+        width: calc(50% - 0.5rem);
+        @include tablet {
+            // width: calc(20% - 1rem);
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $secondary-color-slate;
+        margin: 0;
+
+        @include tablet {
+            display: none;
+        }
+
+    }
+
+    p {
+        margin-block-start: 0.25em;
+        margin-block-end: 0.25em;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include tablet {
+            justify-content: center;
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
+}
