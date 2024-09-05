@@ -24,6 +24,10 @@
     @include tablet {
       border-bottom: 1px solid $secondary-color-clud;
     }
+
+    @include desktop {
+      padding-left: 32px;
+    }
   }
 
   &__buttons {
