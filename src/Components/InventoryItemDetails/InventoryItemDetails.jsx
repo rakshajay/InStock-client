@@ -1,42 +1,79 @@
 import "./InventoryItemDetails.scss";
-import backArrow from '../Assets/Icons/arrow_back-24px.svg'
+import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
+import mobileEdit from '../../Assets/Icons/edit-white-24px.svg'
+import {Link, useParams} from 'react-router-dom'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-function InventoryItemDetails() {
+
+
+function InventoryItemDetails({itemData}) {
+
+  const [stockTag, setStockTag] = useState();
+  const [itemDetails, setItemDetails] = useState({});
+
+  const {itemId} = useParams();
+
+  // const setStock = () =>{
+  //   if (itemDetails.status === "In Stock"){
+  //     setStockTag("item-status--inStock")
+  //   } else {
+  //     setStockTag("item-status--outOfStock")
+  //   }
+  // }
+
+  useEffect(() => {
+    const getItemDetails = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/inventories/${itemId}`);
+        console.log(response.data)
+        setItemDetails(response.data);
+        // setStock();
+
+      } catch (e) {
+        console.log('error getting warehouses list', e);
+      }
+    }
+
+    getItemDetails();
+  }, [])
+
+
     return (
       <section className="main-container">
         <div className="main-container__row-top">
           <div className="main-container__row-title">
-            <img src={backArrow} />
-            <h1 className="item-title">Television</h1>
+            <Link to=''><img src={backArrow} /></Link>
+            <h1 className="item-title">{itemDetails.item_name}</h1>
           </div>
-          <button className="button">Edit</button>
+          <Link to="/warehouse/:warehouseId/inventory/:itemId/edit"><button className="primary-button small-button"><img src={mobileEdit}/></button></Link>
         </div>
         <div className="main-container__row-bottom">
-          <div className="main-container__info">
+          <div className="main-container__info-left">
             <div>
-              <h3>ITEM DESCRIPTION</h3>
-              <p>This is an item description</p> 
+              <p className="item-subheader">Item Description:</p>
+              <p>{itemDetails.description}</p> 
             </div>
             <div>
-              <h3>CATEGORY</h3>
-              <p>Electronics</p> 
+              <p className="item-subheader">Category:</p>
+              <p>{itemDetails.category}</p> 
             </div>
           </div>
-          <div className="main-container__info">
+          <div className="main-container__info-right">
             <div className="main-container__info-split">
-              <div className="main-container__info">
+              <div className="main-container__info-right">
                 <div> 
-                  <h3>STATUS</h3>
-                  <p>IN stock</p> 
+                  <p className="item-subheader">Status:</p>
+                  <p >{itemDetails.status}</p> 
                 </div>
                 <div>
-                  <h3>Warehouse</h3>
-                  <p>Electronics</p> 
+                  <p className="item-subheader">Warehouse:</p>
+                  <p>{itemDetails.warehouse_name}</p> 
                 </div>
               </div> 
-              <div className="main-container__info">
-                  <h3>Quantity</h3>
-                  <p>200</p> 
+              <div className="main-container__item-quantity">
+                <p className="item-subheader">Quantity:</p>
+                  <p>{itemDetails.quantity}</p> 
                 </div>
             </div>
           </div>

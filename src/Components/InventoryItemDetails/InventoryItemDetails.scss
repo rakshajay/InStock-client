@@ -2,25 +2,34 @@
 @use '../../Styles/mixins' as *;
 @use '../../Styles/variables' as *;
 
+p{
+    @include mobile-p2-body-medium;
+    font-weight: 400;
+    color: $primary-color-instock-black;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(90, 158, 119);
-    padding: 24px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1px;
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, .1);
+    margin: 24px;
 
     &__row-top{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid grey;
+        align-items: baseline;
+        padding: 24px;
+        border-bottom: 1px solid $secondary-color-cloud;
     }
 
     &__row-title{
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: baseline;
         gap: 10px;
     }
 
@@ -29,15 +38,29 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        padding: 24px;
         @include tablet{
             flex-direction: row;
+            gap: 16px;
         }
     }
 
-    &__info{
+    &__info-left{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        padding-right:16px;
+        @include tablet{
+            border-right: 1px solid $secondary-color-slate;
+        }
+    }
+    &__info-right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
     }
 
@@ -48,9 +71,51 @@
         align-items: flex-start;
         
     }
+    &__item-quantity{
+        width: 70%;
+    }
+
+}
+
+.small-button{
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .item-title{
-    font-family: 'Trillium';
+    margin: 0;
+}
+
+.item-subheader{
+   @include mobile-p3-body-small;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: $secondary-color-slate;
+}
+
+.item-status{
+    height: 24px;
+    margin: 0;
+    padding: 0 8px;
+    border:none;
+    border-radius:20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    // background-color: rgba(21, 132, 99, .07);
+    // color: rgba(21, 132, 99, 1);
+    &--inStock{
+        background-color: rgba(21, 132, 99, .07);
+        color: rgba(21, 132, 99, 1);
+    }
+    &--outOfStock{
+        background-color: rgba(201, 69, 21, .07);
+        color: rgba(201, 69, 21, 1)
+    }
+    @include tablet{
+        height: 26px;
+    }
 }
