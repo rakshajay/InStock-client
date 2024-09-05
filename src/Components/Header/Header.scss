@@ -22,13 +22,15 @@
   }
 
   &__wrapper-logo {
-    margin-bottom: 16px;
+    height: 23px;
   }
 
   &__wrapper-buttons {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 16px;
 
     @include tablet {
       width: auto;
