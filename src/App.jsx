@@ -10,7 +10,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <div id="app__body">
-        <Routes>
+        <AddNewWarehouse></AddNewWarehouse>
+        {/* <Routes>
           <Route path="/" element={<WarehouseList />} />
           <Route
             path="/warehouse/:warehouseId"
@@ -38,7 +39,7 @@ function App() {
             element={<ItemAdd />}
           />
           <Route path="*" element={<Navigate to={"/"} />} />
-        </Routes>
+        </Routes> */}
       </div>
       <Footer />
     </BrowserRouter>
