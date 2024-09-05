@@ -2,7 +2,6 @@ import "./App.scss";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-
 import Inventory from "./Pages/Inventory/Inventory";
 import AddNewInventory from "./Components/AddNewInventory/AddNewInventory";
 import InventoryItemDetails from "./Components/InventoryItemDetails/InventoryItemDetails";

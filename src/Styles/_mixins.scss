@@ -1,3 +1,4 @@
+
 @mixin tablet {
   @media (min-width: 768px) {
     @content;
@@ -9,3 +10,40 @@
     @content;
   }
 }
+
+
+// Mixins for Desktop & Tablet Text Styles
+
+
+@mixin p1-body-large {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin p2-body-medium {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin p3-body-small {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+// Mixins for Mobile Text Styles
+
+@mixin mobile-p1-body-large {
+  font-size: 15px;
+  line-height: 26px;
+}
+
+@mixin mobile-p2-body-medium {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@mixin mobile-p3-body-small {
+  font-size: 11px;
+  line-height: 16px;
+}
+
