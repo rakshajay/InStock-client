@@ -41,7 +41,7 @@ function WarehouseForm() {
       </div>
 
       <div className="warehouse__contact">
-        <h2>Contact Details</h2>
+        <h2 className="warehouse__details-title">Contact Details</h2>
         <label className="warehouse__details-label">Contact Name</label>
         <input
           className="warehouse__details-input"
@@ -74,21 +74,6 @@ function WarehouseForm() {
           placeholder="Email"
           required
         />
-      </div>
-
-      <div className="warehouse__buttons">
-        <button
-          className="warehouse__button-cancel warehouse__button"
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          className="warehouse__button-submit warehouse__button"
-          type="submit"
-        >
-          +Add Warehouse
-        </button>
       </div>
     </form>
   );

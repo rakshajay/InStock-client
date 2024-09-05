@@ -12,6 +12,20 @@ function AddNewWarehouse() {
       />
       <h2 className="warehouse__title">Add New Warehouse</h2>
       <WarehouseForm />
+      <div className="warehouse__buttons">
+        <button
+          className="warehouse__button-cancel warehouse__button"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="warehouse__button-submit warehouse__button"
+          type="submit"
+        >
+          +Add Warehouse
+        </button>
+      </div>
     </div>
   );
 }

@@ -7,22 +7,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid $secondary-color-clud;
+    overflow: hidden;
   }
 
   &__details {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 16px 16px;
+    border-top: 1px solid $secondary-color-clud;
+
+    &-title {
+      padding: 0 16px;
+    }
 
     &-label {
       margin-top: 16px;
       margin-bottom: 4px;
+      padding: 0 16px;
     }
 
     &-input {
       height: 36px;
       border-radius: 20px;
+      margin: 0 16px;
       padding: 0 16px;
       border: 1px solid $secondary-color-clud;
 
@@ -36,10 +44,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  &__buttons {
-    margin-top: 16px;
-    background-color: $background-grey;
+    padding: 16px 16px;
+    border-top: 1px solid $secondary-color-clud;
   }
 }
