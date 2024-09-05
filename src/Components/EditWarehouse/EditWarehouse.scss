@@ -11,6 +11,10 @@
     @include tablet {
       margin: -73px 32px 0;
     }
+
+    @include desktop {
+      margin: -73px 120px 0;
+    }
   }
 
   &__wrapper {

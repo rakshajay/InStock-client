@@ -13,6 +13,10 @@
       flex-direction: row;
       padding-top: 16px;
     }
+
+    @include desktop {
+      padding-left: 12px;
+    }
   }
 
   &__details {
