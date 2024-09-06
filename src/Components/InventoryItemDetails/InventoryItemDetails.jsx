@@ -34,10 +34,13 @@ function InventoryItemDetails() {
       <section className="main-container">
         <div className="main-container__row-top">
           <div className="main-container__row-title">
-            <Link to='/warehouse/:warehouseId/inventory/'><img src={backArrow} /></Link>
+            <Link to={`/warehouse/${itemDetails.warehouse_id}`}><img src={backArrow} /></Link>
             <h1 className="item-title">{itemDetails.item_name}</h1>
           </div>
-          <Link to="/warehouse/:warehouseId/inventory/:itemId/edit"><button className="primary-button small-button"><img src={mobileEdit}/></button></Link>
+          <Link to="/inventory/:itemId/edit"><button className="primary-button edit-button">
+            <img className="edit-icon" src={mobileEdit}/>
+            <p className="button-text">Edit</p>
+            </button></Link>
         </div>
         <div className="main-container__row-bottom">
           <div className="main-container__info-left">
