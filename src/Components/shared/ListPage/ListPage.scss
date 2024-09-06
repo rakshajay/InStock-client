@@ -1,0 +1,66 @@
+@use '/src/Styles/variables' as *;
+@use '/src/Styles/mixins' as *;
+
+.list-page {
+    background-color: $primary-color-white;
+    &__search {
+        background-image: url('src/assets/icons/search-24px.svg');
+        background-position: right;
+        padding-right: 1rem;
+    }
+
+    &__header {
+        padding: 1.5rem;
+        box-sizing: border-box;
+        align-items: center;
+
+        @include tablet {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &__actions {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+
+    &__container {
+        border-top: 1px solid $secondary-color-cloud;
+        margin-block-start: 0rem;
+
+        @include tablet {
+            border-top: none;
+        }
+    }
+
+    &__column-headers {
+        display: none;
+        background-color: rgba($background-grey, 0.7);
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $secondary-color-slate;
+        margin: 0.5em 0;
+
+        flex-grow: 1;
+        flex-basis: 0;
+        justify-content: center;
+
+        &--centered {
+            text-align: center;
+        }
+
+    }
+}

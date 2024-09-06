@@ -23,7 +23,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 16px 16px;
+    padding: 16px;
+    margin-bottom: 16px;
     border-top: 1px solid $secondary-color-cloud;
 
 
@@ -53,7 +54,7 @@
       border-radius: 20px;
       font-size: 11px;
       margin: 0 16px;
-      padding: 0 16px;
+      padding: 0 13px;
       border: 1px solid $secondary-color-cloud;
 
 
