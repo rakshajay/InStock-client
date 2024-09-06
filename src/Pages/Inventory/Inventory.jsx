@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import List from "../../Components/shared/List/List";
 import "./Inventory.scss";
 import axios from "axios";
+import ListPage from "../../Components/shared/ListPage/ListPage";
 
 function Inventory() {
   const [inventoryList, setInventoryList] = useState([]);
@@ -28,7 +28,7 @@ function Inventory() {
   }, [])
 
   return (
-    <List itemList={inventoryList} columns={columns} header='Iventory' singularLabel={'Inventory'} />
+    <ListPage itemList={inventoryList} columns={columns} header='Iventory' singularLabel={'Inventory'} />
   )
 }
   
