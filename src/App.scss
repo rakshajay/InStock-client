@@ -1,42 +1,133 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@use "./Styles/mixins" as *;
+@use "./Styles/variables" as *;
+@use "./Styles/fonts" as *;
+
+body {
+  background-color: $background-grey;
+  font-family: "Titillium";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+h1 {
+  font-size: 28px;
+  line-height: 36px;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  @include tablet {
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+h2 {
+  font-size: 20px;
+  line-height: 28px;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
-.card {
-  padding: 2em;
+h3,
+a,
+button {
+  font-size: 13px;
+  line-height: 20px;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+h4 {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: normal;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+p {
+  font-size: 13px;
+  line-height: 20px;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &.small {
+    font-size: 11px;
+    line-height: 16px;
+
+    @include tablet {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &.large {
+    font-size: 15px;
+    line-height: 26px;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  color: $primary-color-instock-black;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  border-radius: 20px;
+  height: 36px;
+  padding: 0 16px;
+  width: 100%;
+
+  &.primary-button {
+    background-color: $primary-color-instock-indigo-blue;
+    color: white;
+  }
+
+  @include tablet {
+    height: 38px;
+  }
+}
+
+input {
+  border-radius: 20px;
+  padding: 8px;
+  margin-block-end: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid $secondary-color-cloud;
+  height: 36px;
+
+  &.input__with-icon {
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 40px;
+    padding-left: 1rem;
+    background-position-x: calc(100% - 1rem);
+  }
+
+  &:active {
+    border: 1px solid $primary-color-instock-indigo-blue;
+  }
 }
