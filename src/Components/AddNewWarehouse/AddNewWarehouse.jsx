@@ -37,7 +37,6 @@ function AddNewWarehouse() {
       newWarehouse
     );
 
-    console.log(updatedWarehouse);
     navigate("/");
     return alert("Warehouse added, you will be redirected to Home");
   };
@@ -59,8 +58,6 @@ function AddNewWarehouse() {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.name);
-
     if (e.target.name === "warehouseName") {
       setWarehouseName(e.target.value);
     } else if (e.target.name === "streetAddress") {

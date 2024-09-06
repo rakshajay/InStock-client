@@ -1,6 +1,6 @@
 import "./EditWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
-import arrowImage from "../..//Assets/Icons/arrow_back-24px.svg";
+import arrowImage from "/src/Assets/Icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -39,7 +39,6 @@ function EditWarehouse() {
       newEditedWarehouse
     );
 
-    console.log(editedWarehouse);
     navigate("/");
     return alert("Changes saved, you will be redirected to Home");
   };
@@ -50,8 +49,6 @@ function EditWarehouse() {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.name);
-
     if (e.target.name === "warehouseName") {
       setWarehouseName(e.target.value);
     } else if (e.target.name === "streetAddress") {

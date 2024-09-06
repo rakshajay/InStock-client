@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import "./ListPage.scss";
 import List from "../List/List";
+import { useNavigate } from "react-router-dom";
 
-function ListPage({ itemList, columns, header, singularLabel }) {
+function ListPage({ itemList, columns, header, singularLabel, actionPath }) {
+  const navigate = useNavigate();
+
   const [filteredList, setFilteredList] = useState(itemList);
   const [search, setSearch] = useState("");
 
@@ -38,11 +41,16 @@ function ListPage({ itemList, columns, header, singularLabel }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className="primary-button">+ Add New {singularLabel}</button>
+          <button
+            className="primary-button"
+            onClick={() => navigate("/warehouse/add")}
+          >
+            + Add New {singularLabel}
+          </button>
         </div>
       </div>
 
-      <List itemList={filteredList} columns={columns} />
+      <List itemList={filteredList} columns={columns} actionPath={actionPath} />
     </div>
   );
 }

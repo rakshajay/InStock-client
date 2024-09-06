@@ -20,49 +20,47 @@ function App() {
       <BrowserRouter>
         <Header />
           <div id="app__body">
-            <Routes>
-              <Route 
-                path="/"
-                element={<Warehouses />}
-              />
-              <Route 
-                path="/inventory"
-                element={<Inventory />}
-              />
-              <Route 
-                path="/warehouse/:warehouseId" 
-                element={<WarehouseDetails />}
-              />
-              <Route 
-                path="/warehouse/:warehouseId/edit"
-                element={<EditWarehouse />}
-              />
-              <Route 
-                path="/warehouse/add" 
-                element={<AddNewWarehouse />} 
-              />
-              <Route
-                path="/warehouse/:warehouseId/inventory"
-                element={<Inventory />}
-              />
-              <Route
-                path="/warehouse/:warehouseId/inventory/:itemId"
-                element={<InventoryItemDetails />}
-              />
-              <Route
-                path="/warehouse/:warehouseId/inventory/:itemId/edit"
-                element={<EditInventoryItem />}
-              />
-              <Route
-                path="/warehouse/:warehouseId/inventory/add"
-                element={<AddNewInventory />}
-              />
-              <Route path="*" element={<Navigate to={"/"} />} />
-            </Routes>
+            <div className="app__container">
+              <Routes>
+                <Route 
+                  path="/"
+                  element={<Warehouses />}
+                />
+                <Route 
+                  path="/warehouse/add" 
+                  element={<AddNewWarehouse />} 
+                />
+                <Route 
+                  path="/warehouse/:warehouseId" 
+                  element={<WarehouseDetails />}
+                />
+                <Route 
+                  path="/warehouse/:warehouseId/edit"
+                  element={<EditWarehouse />}
+                />              
+                <Route 
+                  path="/inventory"
+                  element={<Inventory />}
+                />
+                <Route
+                  path="/inventory/add"
+                  element={<AddNewInventory />}
+                />              
+                <Route
+                  path="/inventory/:itemId"
+                  element={<InventoryItemDetails />}
+                />
+                <Route
+                  path="/inventory/:itemId/edit"
+                  element={<EditInventoryItem />}
+                />
+                <Route path="*" element={<Navigate to={"/"} />} />
+              </Routes>
+            </div>
           </div>
         <Footer />
       </BrowserRouter>
-  
+    
   );
 }
 
