@@ -12,7 +12,11 @@ function Warehouses() {
       values: ["warehouse_name"],
       customRenderer: (itemData) => {
         const { id, warehouse_name } = itemData;
-        return <Link to={`/warehouse/${id}`}>{warehouse_name}</Link>;
+        return (
+          <Link key={id} to={`/warehouse/${id}`}>
+            {warehouse_name}
+          </Link>
+        );
       },
     },
     { label: "contact name", values: ["contact_name"] },

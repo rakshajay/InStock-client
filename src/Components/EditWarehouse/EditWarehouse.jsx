@@ -1,8 +1,10 @@
 import "./EditWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "../..//Assets/Icons/arrow_back-24px.svg";
+//add useparams
 
 function EditWarehouse() {
+  //id??? --
   return (
     <div className="warehouse__edit">
       <div className="warehouse__wrapper">
@@ -14,20 +16,6 @@ function EditWarehouse() {
         <h2 className="warehouse__title">Edit Warehouse</h2>
       </div>
       <WarehouseForm />
-      <div className="warehouse__buttons">
-        <button
-          className="warehouse__button-cancel warehouse__button"
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          className="warehouse__button-submit warehouse__button"
-          type="submit"
-        >
-          Save
-        </button>
-      </div>
     </div>
   );
 }

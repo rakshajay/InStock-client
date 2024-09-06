@@ -1,17 +1,21 @@
 import React from "react";
 import "./WarehouseForm.scss";
 
-function WarehouseForm({ selectedWarehouse, addWarehouse, editWarehouse }) {
+function WarehouseForm({ handleSubmit }) {
   // const warehouses = selectedWarehouse.warehouses;
   // const apiBaseURL = "http://localhost:8080";
+  //cada nueva warehouse ocupa un nuevo id -- import uuid
 
-  const handleSubmit = async (e) => {
+  const handleSubmitButton = async (e) => {
     e.preventDefault();
 
     const newWarehouse = {};
+
+    handleSubmit(e);
   };
+
   return (
-    <form className="warehouse__form" onSubmit={handleSubmit}>
+    <form className="warehouse__form" onSubmit={(e) => handleSubmitButton(e)}>
       <div className="warehouse__details">
         <h2 className="warehouse__details-title">Warehouse Details</h2>
         <label className="warehouse__details-label">Warehouse Name</label>
@@ -82,6 +86,20 @@ function WarehouseForm({ selectedWarehouse, addWarehouse, editWarehouse }) {
           placeholder="Email"
           required
         />
+      </div>
+      <div className="warehouse__buttons">
+        <button
+          className="warehouse__button-cancel warehouse__button"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="warehouse__button-submit warehouse__button"
+          type="submit"
+        >
+          +Add Warehouse
+        </button>
       </div>
     </form>
   );
