@@ -42,6 +42,22 @@ function AddNewWarehouse() {
     return alert("Warehouse added, you will be redirected to Home");
   };
 
+  const handleCancel = async (e) => {
+    setWarehouseName("");
+    setWarehouseAddress("");
+    setWarehouseCity("");
+    setWarehouseCountry("");
+    setWarehouseContactName("");
+    setWarehousePosition("");
+    setWarehousePhone("");
+    setWarehouseEmail("");
+
+    navigate("/");
+    return alert(
+      "Your warehouse was not added, you will be redirected to Home"
+    );
+  };
+
   const handleChange = (e) => {
     console.log(e.target.name);
 
@@ -77,6 +93,7 @@ function AddNewWarehouse() {
       <WarehouseForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        handleCancel={handleCancel}
         warehouseName={warehouseName}
         warehouseAddress={warehouseAddress}
         warehouseCity={warehouseCity}

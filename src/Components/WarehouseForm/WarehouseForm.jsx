@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./WarehouseForm.scss";
 import { useLocation, Navigate } from "react-router-dom";
 
@@ -11,6 +11,7 @@ import { useLocation, Navigate } from "react-router-dom";
 function WarehouseForm({
   handleSubmit,
   handleChange,
+  handleCancel,
   warehouseName,
   warehouseAddress,
   warehouseCity,
@@ -20,14 +21,29 @@ function WarehouseForm({
   warehousePhone,
   warehouseEmail,
 }) {
+  // const [originalValues, setOriginalValues] = useState({});
+
+  // useEffect(() => {
+  //   setOriginalValues({
+  //     whName: warehouseName,
+  //     ...
+  //   })
+
+  // }, [])
+
+  let location = useLocation();
+
   const handleSubmitButton = async (e) => {
     e.preventDefault();
 
     handleSubmit(e);
   };
 
-  let location = useLocation();
+  const handleCancelButton = async (e) => {
+    e.preventDefault();
 
+    handleCancel;
+  };
   const btnText = location.pathname.includes("edit")
     ? "Save"
     : "+Add Warehouse";
@@ -125,6 +141,7 @@ function WarehouseForm({
         <button
           className="warehouse__button-cancel warehouse__button"
           type="button"
+          onClick={handleCancel}
         >
           Cancel
         </button>

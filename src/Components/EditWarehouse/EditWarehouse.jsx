@@ -44,6 +44,11 @@ function EditWarehouse() {
     return alert("Changes saved, you will be redirected to Home");
   };
 
+  const handleCancel = async (e) => {
+    navigate(`/warehouse/${warehouseId}`);
+    return alert("Changes cancelled, you will be redirected to the warehouse");
+  };
+
   const handleChange = (e) => {
     console.log(e.target.name);
 
@@ -102,6 +107,7 @@ function EditWarehouse() {
       <WarehouseForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        handleCancel={handleCancel}
         warehouseName={warehouseName}
         warehouseAddress={warehouseAddress}
         warehouseCity={warehouseCity}
