@@ -16,16 +16,19 @@
 
 
 @mixin p1-body-large {
+  font-family: "Titillium";
   font-size: 16px;
   line-height: 28px;
 }
 
 @mixin p2-body-medium {
+  font-family: "Titillium";
   font-size: 14px;
   line-height: 22px;
 }
 
 @mixin p3-body-small {
+  font-family: "Titillium";
   font-size: 12px;
   line-height: 18px;
 }
