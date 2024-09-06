@@ -7,4 +7,4 @@ function WarehouseDetails() {
     );
   }
   
-export default WarehouseDetails;
+  export default WarehouseDetails;
