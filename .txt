@@ -1,4 +1,5 @@
 TODO
 1. make warehouse/inventory active when on endpoint
-2. font!!!!!!!!!!!!
-3. make body of app bigger and footer to be at the bottom of the app...always!
+2. ---done font!!!!!!!!!!!!
+3. ---done make body of app bigger and footer to be at the bottom of the app...always!
+4. --done add max-width to desktop to form

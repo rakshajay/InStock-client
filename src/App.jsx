@@ -11,6 +11,9 @@ import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
 import Warehouses from "./Pages/Warehouses/Warehouses";
 import WarehouseDetails from "./Components/WarehouseDetails/WarehouseDetails";
 
+// import xyz component from 'component'...
+
+
 function App() {
   return (
 

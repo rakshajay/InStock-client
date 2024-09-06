@@ -26,6 +26,7 @@
     padding: 16px 16px;
     border-top: 1px solid $secondary-color-cloud;
 
+
     @include tablet {
       border-top: none;
       border-right: 1px solid $secondary-color-cloud;
@@ -35,20 +36,26 @@
 
     &-title {
       padding: 0 16px;
+      font-weight: 500;
+      margin-bottom: 0px;
+      margin-top: 0;
     }
 
     &-label {
       margin-top: 16px;
       margin-bottom: 4px;
       padding: 0 16px;
+      font-size: 13px;
     }
 
     &-input {
       height: 36px;
       border-radius: 20px;
+      font-size: 11px;
       margin: 0 16px;
       padding: 0 16px;
       border: 1px solid $secondary-color-cloud;
+
 
       @include tablet {
         height: 38px;
