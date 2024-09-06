@@ -52,9 +52,9 @@ function AddNewWarehouse() {
     setWarehousePhone("");
     setWarehouseEmail("");
 
-    navigate("/");
+    navigate("/warehouses");
     return alert(
-      "Your warehouse was not added, you will be redirected to Home"
+      "Your warehouse was not added, you will be redirected to Warehouses"
     );
   };
 

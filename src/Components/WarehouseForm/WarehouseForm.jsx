@@ -2,12 +2,6 @@ import React, { useEffect } from "react";
 import "./WarehouseForm.scss";
 import { useLocation, Navigate } from "react-router-dom";
 
-//--done! add warehouse button -clear form & redirect to warehouses
-// --done! save button - save changes on warehouse form
-//--done! extra: save button -redirect to home
-//cancel /edit button return to original changes
-//cancel / add clear form
-
 function WarehouseForm({
   handleSubmit,
   handleChange,
@@ -21,16 +15,6 @@ function WarehouseForm({
   warehousePhone,
   warehouseEmail,
 }) {
-  // const [originalValues, setOriginalValues] = useState({});
-
-  // useEffect(() => {
-  //   setOriginalValues({
-  //     whName: warehouseName,
-  //     ...
-  //   })
-
-  // }, [])
-
   let location = useLocation();
 
   const handleSubmitButton = async (e) => {
@@ -39,11 +23,6 @@ function WarehouseForm({
     handleSubmit(e);
   };
 
-  const handleCancelButton = async (e) => {
-    e.preventDefault();
-
-    handleCancel;
-  };
   const btnText = location.pathname.includes("edit")
     ? "Save"
     : "+Add Warehouse";
