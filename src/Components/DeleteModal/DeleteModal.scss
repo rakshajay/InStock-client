@@ -20,7 +20,7 @@
     background: $primary-color-white;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding:1rem;
+    padding: 1rem;
     height: 100vh;
 
     &-close {
@@ -59,17 +59,17 @@
         font-weight: 600;
 
         button {
-         height:2.25rem;
+          height: 2.25rem;
           width: 10.1875rem;
 
           @include tablet {
-            height:2.375rem;
+            height: 2.375rem;
             width: auto;
           }
         }
 
         &-cancel {
-          border: 0.0625rem solid $secondary-color-clud;
+          border: 0.0625rem solid $secondary-color-cloud;
           color: $secondary-color-slate;
 
           &:hover {
@@ -93,16 +93,16 @@
         }
       }
       @include tablet {
-       height: auto;
-       padding:0 3rem 0 3rem;
+        height: auto;
+        padding: 0 3rem 0 3rem;
       }
     }
     @include tablet {
-        width: 42rem;
-        height: auto;
-        margin: 8.125rem 3rem auto 3rem;
-        padding:1rem;
-        border-radius: .2rem;
-      }
+      width: 42rem;
+      height: auto;
+      margin: 8.125rem 3rem auto 3rem;
+      padding: 1rem;
+      border-radius: 0.2rem;
+    }
   }
 }

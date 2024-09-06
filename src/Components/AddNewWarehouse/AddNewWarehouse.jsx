@@ -1,8 +1,11 @@
 import "./AddNewWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
-import arrowImage from "../Assets/Icons/arrow_back-24px.svg";
+import arrowImage from "../../Assets/Icons/arrow_back-24px.svg";
 
-function AddNewWarehouse() {
+function AddNewWarehouse({ selectedWarehouse, addWarehouse }) {
+  // const warehouses = selectedWarehouse.warehouses;
+  // const apiBaseURL = "http://localhost:8080";
+
   return (
     <div className="warehouse__add">
       <div className="warehouse__wrapper">

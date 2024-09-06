@@ -1,9 +1,17 @@
 import React from "react";
 import "./WarehouseForm.scss";
 
-function WarehouseForm() {
+function WarehouseForm({ selectedWarehouse, addWarehouse, editWarehouse }) {
+  // const warehouses = selectedWarehouse.warehouses;
+  // const apiBaseURL = "http://localhost:8080";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newWarehouse = {};
+  };
   return (
-    <form className="warehouse__form">
+    <form className="warehouse__form" onSubmit={handleSubmit}>
       <div className="warehouse__details">
         <h2 className="warehouse__details-title">Warehouse Details</h2>
         <label className="warehouse__details-label">Warehouse Name</label>

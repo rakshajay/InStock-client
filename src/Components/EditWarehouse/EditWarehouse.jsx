@@ -1,6 +1,6 @@
 import "./EditWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
-import arrowImage from "../Assets/Icons/arrow_back-24px.svg";
+import arrowImage from "../..//Assets/Icons/arrow_back-24px.svg";
 
 function EditWarehouse() {
   return (
