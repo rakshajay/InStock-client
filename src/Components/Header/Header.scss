@@ -7,18 +7,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 130px;
+  padding: 1rem;
+  padding-bottom: 5rem;
   font-family: "Titillium";
 
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 32px 30px;
-    height: 130px;
-  }
-
-  @include desktop {
-    padding: 0 120px 50px;
+    padding-bottom: 6rem;
   }
 
   &__wrapper-logo {

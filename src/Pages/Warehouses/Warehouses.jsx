@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Warehouses.scss";
 import axios from "axios";
 import ListPage from "../../Components/shared/ListPage/ListPage";
-import { Link } from "react-router-dom";
+import LinkWithArrow from "../../Components/shared/LinkWithArrow/LinkWithArrow";
 
 function Warehouses() {
   const [warehouseList, setWarehouseList] = useState([]);
@@ -11,11 +11,14 @@ function Warehouses() {
     {label: 'warehouse', values: ['warehouse_name'], customRenderer: (itemData) => {
       const { id, warehouse_name} = itemData;
       return (
-        <Link to={`/warehouse/${id}`}>{warehouse_name}</Link>
+        <LinkWithArrow to={`/warehouse/${id}`} label={warehouse_name} />
       )
     }},
+    {label: 'address', values: ['address', 'city', 'country'], customRenderer: (itemData) => {
+      const {address, city, country} = itemData;
+      return <p>{address}, {city}, {country}</p>
+    }},
     {label: 'contact name', values: ['contact_name']},
-    {label: 'address', values: ['address', 'city', 'country']},
     {label: 'contact information', values: ['contact_phone', 'contact_email']},
   ];
 
@@ -33,7 +36,13 @@ function Warehouses() {
   }, [])
 
   return (
-    <ListPage itemList={warehouseList} columns={columns} header='Warehouses' singularLabel="Warehouse" />
+    <ListPage 
+      itemList={warehouseList}
+      columns={columns}
+      header='Warehouses'
+      singularLabel="Warehouse"
+      actionPath={'warehouse'}
+    />
   );
 }
   

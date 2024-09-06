@@ -1,0 +1,8 @@
+@use '/src/Styles/variables' as *;
+
+.link-with-arrow {
+    display: flex;
+    align-items: center;
+    color: $primary-color-instock-indigo-blue;
+    font-weight: bold;
+}
