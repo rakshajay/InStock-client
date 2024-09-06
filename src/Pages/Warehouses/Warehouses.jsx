@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import "./Warehouses.scss";
-import List from "../../Components/shared/List/List";
 import axios from "axios";
+import ListPage from "../../Components/shared/ListPage/ListPage";
+import { Link } from "react-router-dom";
 
 function Warehouses() {
   const [warehouseList, setWarehouseList] = useState([]);
   const columns = [
-    { label: "warehouse", values: ["warehouse_name"] },
+    {
+      label: "warehouse",
+      values: ["warehouse_name"],
+      customRenderer: (itemData) => {
+        const { id, warehouse_name } = itemData;
+        return <Link to={`/warehouse/${id}`}>{warehouse_name}</Link>;
+      },
+    },
     { label: "contact name", values: ["contact_name"] },
     { label: "address", values: ["address", "city", "country"] },
     {
@@ -29,7 +37,7 @@ function Warehouses() {
   }, []);
 
   return (
-    <List
+    <ListPage
       itemList={warehouseList}
       columns={columns}
       header="Warehouses"
