@@ -2,8 +2,9 @@ import React from "react";
 import "./WarehouseForm.scss";
 import { useLocation, Navigate } from "react-router-dom";
 
-//add warehouse button -clear form & redirect to warehouses
+//--done! add warehouse button -clear form & redirect to warehouses
 // --done! save button - save changes on warehouse form
+//--done! extra: save button -redirect to home
 //cancel /edit button return to original changes
 //cancel / add clear form
 
@@ -127,6 +128,7 @@ function WarehouseForm({
         >
           Cancel
         </button>
+
         <button
           className="warehouse__button-submit warehouse__button"
           type="submit"
