@@ -7,9 +7,13 @@ function ListItem({itemData, columns}) {
             {columns.map(column => (
                 <div key={`list-item-${column.label}`} className="list-item__pair">
                     <h4 className='list-item__label'>{column.label}</h4>
-                    {column.values.map(value => (
-                        <p key={value}>{itemData[value]}</p>
-                    ))}
+                    {
+                        column.values.map(value => (
+                            column.customRenderer ?
+                            column.customRenderer(itemData) :
+                            <p key={value}>{itemData[value]}</p>
+                        ))
+                    }
                 </div>
             ))}
             <div className='list-item__actions'>

@@ -1,0 +1,31 @@
+@use "../../Styles/_mixins" as *;
+@use "../../Styles/_variables" as *;
+
+.warehouse-details {
+
+
+    &__container{
+        padding: 1.5rem;
+    }
+
+    &__header{
+        display: flex;
+        flex-direction: row;
+    }
+    &__contact{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    &__contact-title{
+        color: $secondary-color-slate;
+        font-weight: 500;
+    }
+
+    &__contact-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
