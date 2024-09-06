@@ -4,19 +4,10 @@
 .warehouse {
   &__edit {
     background-color: $primary-color-white;
-    margin: -30px 16px 0;
+    margin: 0;
     border-radius: 5px;
     box-shadow: 1px 1px 5px $secondary-color-cloud;
     max-width: 1280px;
-
-
-    @include tablet {
-      margin: -73px 32px 0;
-    }
-
-    @include desktop {
-      margin: -73px auto 0;
-    }
   }
 
   &__wrapper {
