@@ -13,10 +13,7 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1px;
-    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, .1);
-    margin: 24px;
+
 
     &__row-top{
         display: flex;
@@ -25,6 +22,9 @@ p{
         align-items: baseline;
         padding: 24px;
         border-bottom: 1px solid $secondary-color-cloud;
+        @include tablet{
+            padding: 25px;
+        }
     }
 
     &__row-title{
@@ -80,13 +80,32 @@ p{
 
 }
 
-.small-button{
+.edit-button{
     width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include tablet{
+        height: 38px;
+        width: 81px;
+        border-radius: 20px;
+        gap: 8px;
+    }
+}
 
+.edit-icon{
+    width: 20px;
+    height: 20px;
+}
+.button-text{
+    display:none;
+    @include tablet{
+        display: inline;
+        color: white;
+        @include p2-body-medium;
+    }
 }
 
 .item-title{
@@ -101,24 +120,3 @@ p{
    padding-bottom: 8px;
 }
 
-.item-status{
-    height: 24px;
-    margin: 0;
-    padding: 0 8px;
-    border:none;
-    border-radius:20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    &--inStock{
-        background-color: rgba(21, 132, 99, .07);
-        color: rgba(21, 132, 99, 1);
-    }
-    &--outOfStock{
-        background-color: rgba(201, 69, 21, .07);
-        color: rgba(201, 69, 21, 1)
-    }
-
-    @include tablet{
-        height: 26px;
-    }
-}
