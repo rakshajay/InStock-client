@@ -1,12 +1,30 @@
 import React from "react";
 import "./WarehouseForm.scss";
+import { useLocation } from "react-router-dom";
 
-function WarehouseForm({ handleSubmit, warehouse }) {
+function WarehouseForm({
+  handleSubmit,
+  handleChange,
+  warehouseName,
+  warehouseAddress,
+  warehouseCity,
+  warehouseCountry,
+  warehouseContactName,
+  warehousePosition,
+  warehousePhone,
+  warehouseEmail,
+}) {
   const handleSubmitButton = async (e) => {
     e.preventDefault();
 
     handleSubmit(e);
   };
+
+  let location = useLocation();
+
+  const btnText = location.pathname.includes("edit")
+    ? "Save"
+    : "+Add Warehouse";
 
   return (
     <form className="warehouse__form" onSubmit={(e) => handleSubmitButton(e)}>
@@ -14,6 +32,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         <h2 className="warehouse__details-title">Warehouse Details</h2>
         <label className="warehouse__details-label">Warehouse Name</label>
         <input
+          value={warehouseName}
           className="warehouse__details-input"
           type="text"
           name="warehouseName"
@@ -23,6 +42,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">Street Address</label>
         <input
+          value={warehouseAddress}
           className="warehouse__details-input"
           type="text"
           name="streetAddress"
@@ -32,6 +52,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">City</label>
         <input
+          value={warehouseCity}
           className="warehouse__details-input"
           type="text"
           name="city"
@@ -41,6 +62,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">Country</label>
         <input
+          value={warehouseCountry}
           className="warehouse__details-input"
           type="text"
           name="country"
@@ -54,6 +76,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         <h2 className="warehouse__details-title">Contact Details</h2>
         <label className="warehouse__details-label">Contact Name</label>
         <input
+          value={warehouseContactName}
           className="warehouse__details-input"
           type="text"
           name="contactName"
@@ -63,6 +86,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">Position</label>
         <input
+          value={warehousePosition}
           className="warehouse__details-input"
           type="text"
           name="position"
@@ -72,6 +96,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">Phone Number</label>
         <input
+          value={warehousePhone}
           className="warehouse__details-input"
           type="text"
           name="phoneNumber"
@@ -81,6 +106,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
         />
         <label className="warehouse__details-label">Email</label>
         <input
+          value={warehouseEmail}
           className="warehouse__details-input"
           type="email"
           name="email"
@@ -100,7 +126,7 @@ function WarehouseForm({ handleSubmit, warehouse }) {
           className="warehouse__button-submit warehouse__button"
           type="submit"
         >
-          +Add Warehouse
+          {btnText}
         </button>
       </div>
     </form>

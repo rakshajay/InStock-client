@@ -2,22 +2,32 @@ import "./AddNewWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "../../Assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
+import { useState } from "react";
 
 function AddNewWarehouse() {
   const apiBaseURL = "http://localhost:8080";
+
+  const [warehouseName, setWarehouseName] = useState([]);
+  const [warehouseAddress, setWarehouseAddress] = useState([]);
+  const [warehouseCity, setWarehouseCity] = useState([]);
+  const [warehouseCountry, setWarehouseCountry] = useState([]);
+  const [warehouseContactName, setWarehouseContactName] = useState([]);
+  const [warehousePosition, setWarehousePosition] = useState([]);
+  const [warehousePhone, setWarehousePhone] = useState([]);
+  const [warehouseEmail, setWarehouseEmail] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newWarehouse = {
-      warehouse_name: e.target.warehouseName.value,
-      address: e.target.streetAddress.value,
-      city: e.target.city.value,
-      country: e.target.country.value,
-      contact_name: e.target.contactName.value,
-      contact_position: e.target.position.value,
-      contact_phone: e.target.phoneNumber.value,
-      contact_email: e.target.email.value,
+      warehouse_name: warehouseName,
+      address: warehouseAddress,
+      city: warehouseCity,
+      country: warehouseCountry,
+      contact_name: warehouseContactName,
+      contact_position: warehousePosition,
+      contact_phone: warehousePhone,
+      contact_email: warehouseEmail,
     };
 
     const updatedWarehouse = await axios.post(
@@ -26,6 +36,28 @@ function AddNewWarehouse() {
     );
 
     console.log(updatedWarehouse);
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target.name);
+
+    if (e.target.name === "warehouseName") {
+      setWarehouseName(e.target.value);
+    } else if (e.target.name === "streetAddress") {
+      setWarehouseAddress(e.target.value);
+    } else if (e.target.name === "city") {
+      setWarehouseCity(e.target.value);
+    } else if (e.target.name === "country") {
+      setWarehouseCountry(e.target.value);
+    } else if (e.target.name === "contactName") {
+      setWarehouseContactName(e.target.value);
+    } else if (e.target.name === "position") {
+      setWarehousePosition(e.target.value);
+    } else if (e.target.name === "phoneNumber") {
+      setWarehousePhone(e.target.value);
+    } else if (e.target.name === "email") {
+      setWarehouseEmail(e.target.value);
+    }
   };
 
   return (
@@ -38,7 +70,18 @@ function AddNewWarehouse() {
         />
         <h2 className="warehouse__title">Add New Warehouse</h2>
       </div>
-      <WarehouseForm handleSubmit={handleSubmit} />
+      <WarehouseForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        warehouseName={warehouseName}
+        warehouseAddress={warehouseAddress}
+        warehouseCity={warehouseCity}
+        warehouseCountry={warehouseCountry}
+        warehouseContactName={warehouseContactName}
+        warehousePosition={warehousePosition}
+        warehousePhone={warehousePhone}
+        warehouseEmail={warehouseEmail}
+      />
     </div>
   );
 }
