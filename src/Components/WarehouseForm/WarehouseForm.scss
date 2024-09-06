@@ -27,6 +27,7 @@
     margin-bottom: 16px;
     border-top: 1px solid $secondary-color-cloud;
 
+
     @include tablet {
       border-top: none;
       border-right: 1px solid $secondary-color-cloud;
@@ -55,6 +56,7 @@
       margin: 0 16px;
       padding: 0 13px;
       border: 1px solid $secondary-color-cloud;
+
 
       @include tablet {
         height: 38px;
