@@ -2,30 +2,83 @@
 @use "../../Styles/_variables" as *;
 
 .warehouse-details {
-
-
-    &__container{
-        padding: 1.5rem;
-    }
-
     &__header{
         display: flex;
         flex-direction: row;
-    }
-    &__contact{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1.5rem;
+        border-bottom: 1px solid $secondary-color-cloud;
+
+        @include tablet {
+            padding: 0 1.5rem;
+            
+        }
     }
 
-    &__contact-title{
-        color: $secondary-color-slate;
-        font-weight: 500;
+    &__details {
+        padding: 0 1.5rem;
+        margin: 1rem 0;
+        p {
+            margin-block-start: 0.25rem;
+            margin-block-end: 0.25rem;
+        }
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        
+            
+        }
+    }
+
+    &__contact {
+        @include tablet {
+            justify-self: start;
+            width: 33%;
+            
+        }
     }
 
     &__contact-details {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include tablet {
+            border-left: 1px solid $secondary-color-cloud;
+            width: 66%;
+        }
     }
+
+    &__contact-name {
+        @include tablet {
+            width: 50%;
+            padding-left: 2rem;
+        }
+    }
+
+    &__contact-information {
+        @include tablet {
+            width: 50%;
+        }
+    }
+
+    &__header-title {
+        display: flex;
+        align-items: center;
+    }
+
+    &__back-button {
+        margin-right: 0.5rem;
+    }
+
+    &__icon-button {
+        width: 36px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 }

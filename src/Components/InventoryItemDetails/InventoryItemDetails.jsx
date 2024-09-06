@@ -4,24 +4,15 @@ import mobileEdit from '../../Assets/Icons/edit-white-24px.svg'
 import {Link, useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import StatusTag from "../shared/StatusTag/StatusTag";
 
 
 
-function InventoryItemDetails({itemData}) {
+function InventoryItemDetails() {
 
-  const [stockTag, setStockTag] = useState();
   const [itemDetails, setItemDetails] = useState({});
 
   const {itemId} = useParams();
-
-  const setStock = () =>{
-    if (itemDetails.quantity > 0){
-      setStockTag("item-status--inStock")
-    } else {
-      setStockTag("item-status--outOfStock")
-    }
-    console.log(stockTag)
-  }
 
   useEffect(() => {
     const getItemDetails = async () => {
@@ -29,7 +20,6 @@ function InventoryItemDetails({itemData}) {
         const response = await axios.get(`http://localhost:8080/inventories/${itemId}`);
         console.log(response.data)
         setItemDetails(response.data);
-        setStock();
 
       } catch (e) {
         console.log('error getting inventory item details', e);
@@ -65,7 +55,7 @@ function InventoryItemDetails({itemData}) {
               <div className="main-container__info-right">
                 <div> 
                   <p className="item-subheader">Status:</p>
-                  <p className={`item-status ${stockTag}`} >{itemDetails.status}</p> 
+                  <StatusTag status={itemDetails.status} />
                 </div>
                 <div>
                   <p className="item-subheader">Warehouse:</p>
