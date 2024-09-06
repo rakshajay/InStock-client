@@ -1,6 +1,11 @@
 import React from "react";
 import "./WarehouseForm.scss";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
+
+//add warehouse button -clear form & redirect to warehouses
+// --done! save button - save changes on warehouse form
+//cancel /edit button return to original changes
+//cancel / add clear form
 
 function WarehouseForm({
   handleSubmit,

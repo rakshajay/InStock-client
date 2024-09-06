@@ -3,9 +3,11 @@ import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "../../Assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddNewWarehouse() {
   const apiBaseURL = "http://localhost:8080";
+  const navigate = useNavigate();
 
   const [warehouseName, setWarehouseName] = useState([]);
   const [warehouseAddress, setWarehouseAddress] = useState([]);
@@ -36,6 +38,8 @@ function AddNewWarehouse() {
     );
 
     console.log(updatedWarehouse);
+    navigate("/");
+    return alert("Warehouse added, you will be redirected to Home");
   };
 
   const handleChange = (e) => {

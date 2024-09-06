@@ -2,13 +2,12 @@ import "./EditWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "../..//Assets/Icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-// cancel button should clear form
 
 function EditWarehouse() {
   const apiBaseURL = "http://localhost:8080";
+  const navigate = useNavigate();
 
   const [warehouseName, setWarehouseName] = useState([]);
   const [warehouseAddress, setWarehouseAddress] = useState([]);
@@ -21,8 +20,28 @@ function EditWarehouse() {
 
   const { warehouseId } = useParams();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newEditedWarehouse = {
+      warehouse_name: warehouseName,
+      address: warehouseAddress,
+      city: warehouseCity,
+      country: warehouseCountry,
+      contact_name: warehouseContactName,
+      contact_position: warehousePosition,
+      contact_phone: warehousePhone,
+      contact_email: warehouseEmail,
+    };
+
+    const editedWarehouse = await axios.patch(
+      `${apiBaseURL}/warehouses/${warehouseId}`,
+      newEditedWarehouse
+    );
+
+    console.log(editedWarehouse);
+    navigate("/");
+    return alert("Changes saved, you will be redirected to Home");
   };
 
   const handleChange = (e) => {
