@@ -6,8 +6,7 @@
     background-color: $primary-color-white;
     margin: -30px 16px 0;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px $secondary-color-clud;
-    max-width: 1280px;
+    box-shadow: 1px 1px 5px $secondary-color-cloud;
 
     @include tablet {
       margin: -73px 32px 0;
@@ -23,7 +22,7 @@
     padding-left: 16px;
 
     @include tablet {
-      border-bottom: 1px solid $secondary-color-clud;
+      border-bottom: 1px solid $secondary-color-cloud;
     }
 
     @include desktop {
@@ -54,7 +53,7 @@
     width: 110px;
     font-size: 9px;
     background-color: $primary-color-white;
-    border: 1px solid $secondary-color-clud;
+    border: 1px solid $secondary-color-cloud;
 
     @include tablet {
       width: auto;
