@@ -1,15 +1,9 @@
 import React from "react";
 import "./WarehouseForm.scss";
 
-function WarehouseForm({ handleSubmit }) {
-  // const warehouses = selectedWarehouse.warehouses;
-  // const apiBaseURL = "http://localhost:8080";
-  //cada nueva warehouse ocupa un nuevo id -- import uuid
-
+function WarehouseForm({ handleSubmit, warehouse }) {
   const handleSubmitButton = async (e) => {
     e.preventDefault();
-
-    const newWarehouse = {};
 
     handleSubmit(e);
   };
@@ -24,6 +18,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="warehouseName"
           placeholder="Warehouse Name"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">Street Address</label>
@@ -32,6 +27,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="streetAddress"
           placeholder="Street Address"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">City</label>
@@ -40,6 +36,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="city"
           placeholder="City"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">Country</label>
@@ -48,6 +45,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="country"
           placeholder="Country"
+          onChange={(e) => handleChange(e)}
           required
         />
       </div>
@@ -60,6 +58,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="contactName"
           placeholder="Contact Name"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">Position</label>
@@ -68,6 +67,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="position"
           placeholder="Position"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">Phone Number</label>
@@ -76,6 +76,7 @@ function WarehouseForm({ handleSubmit }) {
           type="text"
           name="phoneNumber"
           placeholder="Phone Number"
+          onChange={(e) => handleChange(e)}
           required
         />
         <label className="warehouse__details-label">Email</label>
@@ -84,6 +85,7 @@ function WarehouseForm({ handleSubmit }) {
           type="email"
           name="email"
           placeholder="Email"
+          onChange={(e) => handleChange(e)}
           required
         />
       </div>

@@ -9,7 +9,6 @@ function AddNewWarehouse() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(e.target.warehouseName.value);
     const newWarehouse = {
       warehouse_name: e.target.warehouseName.value,
       address: e.target.streetAddress.value,
