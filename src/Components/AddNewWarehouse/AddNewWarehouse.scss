@@ -8,6 +8,14 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px $secondary-color-cloud;
     max-width: 1280px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      margin: 0;
+    }
   }
 
   &__wrapper {
@@ -39,6 +47,7 @@
     @include tablet {
       justify-content: end;
       padding-right: 32px;
+      width: 100%;
     }
   }
 
