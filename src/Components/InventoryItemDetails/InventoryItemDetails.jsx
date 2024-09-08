@@ -37,7 +37,7 @@ function InventoryItemDetails() {
             <Link to={`/warehouse/${itemDetails.warehouse_id}`}><img src={backArrow} /></Link>
             <h1 className="item-title">{itemDetails.item_name}</h1>
           </div>
-          <Link to="/inventory/:itemId/edit"><button className="primary-button edit-button">
+          <Link to={`/inventory/${itemDetails.id}/edit`}><button className="primary-button edit-button">
             <img className="edit-icon" src={mobileEdit}/>
             <p className="button-text">Edit</p>
             </button></Link>
