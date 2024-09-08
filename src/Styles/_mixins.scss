@@ -36,16 +36,19 @@
 // Mixins for Mobile Text Styles
 
 @mixin mobile-p1-body-large {
+  font-family: "Titillium";
   font-size: 15px;
   line-height: 26px;
 }
 
 @mixin mobile-p2-body-medium {
+  font-family: "Titillium";
   font-size: 13px;
   line-height: 20px;
 }
 
 @mixin mobile-p3-body-small {
+  font-family: "Titillium";
   font-size: 11px;
   line-height: 16px;
 }

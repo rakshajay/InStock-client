@@ -2,20 +2,15 @@
 @use "../../Styles/variables" as *;
 
 .warehouse {
-  &__edit {
-    background-color: $primary-color-white;
-    margin: 0;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px $secondary-color-cloud;
-    max-width: 1280px;
-  }
 
   &__wrapper {
     display: flex;
-    padding-left: 16px;
+    padding: 32px 24px 24px 24px;
+
 
     @include tablet {
       border-bottom: 1px solid $secondary-color-cloud;
+      padding: 32px 24px 21px 24px;
     }
 
     @include desktop {
@@ -25,8 +20,9 @@
 
   &__title {
     padding-left: 5px;
-    font-weight: 500;
+    font-weight: 600;
   }
+
   &__buttons {
     display: flex;
     align-items: center;

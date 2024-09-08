@@ -24,10 +24,10 @@ p{
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        padding: 32px 40px 24px 40px;
+        padding: 32px 24px 24px 24px;
         border-bottom: 1px solid $secondary-color-cloud;
         @include tablet{
-            padding: 32px 40px 21px 40px;
+            padding: 32px 32px 21px 32px;
         }
     }
 
@@ -43,12 +43,12 @@ p{
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 16px 40px 18px 40px;
+        padding: 16px 24px 18px 24px;
         gap: 16px;
         @include tablet{
             flex-direction: row;
             gap: 24px;
-            padding: 16px 40px 32px 40px;
+            padding: 16px 32px 32px 32px;
         }
     }
 

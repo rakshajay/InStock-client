@@ -7,12 +7,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem 1.5rem;
+        padding: 32px 24px 24px 20px;
         border-bottom: 1px solid $secondary-color-cloud;
 
         @include tablet {
-            padding: 0 1.5rem;
-            
+            padding: 32px 32px 21px 28px;
         }
     }
 
@@ -27,6 +26,7 @@
         @include tablet {
             display: flex;
             flex-direction: row;
+            padding: 0 32px;
         
             
         }
@@ -81,4 +81,28 @@
     }
 
 
+}
+
+.edit-button{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+        height: 38px;
+        width: 81px;
+        border-radius: 20px;
+        gap: 8px;
+    }
+}
+
+.button-text{
+    display:none;
+    @include tablet{
+        display: inline;
+        color: white;
+        @include p2-body-medium;
+    }
 }

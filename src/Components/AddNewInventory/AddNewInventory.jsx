@@ -65,7 +65,7 @@ function AddNewInventory() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get("http://localhost:8080/inventories");
-        const categorySet = new Set(response.data.map((item) => item.category.toLowerCase()));
+        const categorySet = new Set(response.data.map((item) => item.category));
         setCategories([...categorySet]);
       } catch (error) {
         console.error("Error fetching categories", error);
@@ -137,7 +137,7 @@ function AddNewInventory() {
             </label>
           </div>
 
-          <div className="inventory-section__details">
+          <div className="inventory-section__details inventory-section__details-lower">
             <h2>Item Availability</h2>
             <label>
               <h3>Status</h3>
