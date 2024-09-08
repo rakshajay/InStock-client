@@ -69,7 +69,7 @@ function WarehouseDetails() {
         <div className="warehouse-details__header">
           <div className="warehouse-details__header-title">
             <div
-              onClick={() => navigate(-1)}
+              onClick={() => navigate("/")}
               className="warehouse-details__back-button"
             >
               <Icon iconSrc={"/src/Assets/Icons/arrow_back-24px.svg"} />

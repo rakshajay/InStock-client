@@ -55,4 +55,13 @@
       background-color: $primary-color-instock-indigo-blue;
     }
   }
+
+  &__link {
+    @include tablet {
+      margin-top: 5px;
+    }
+    @include desktop {
+      margin-top: 10px;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import "./EditWarehouse.scss";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "/src/Assets/Icons/arrow_back-24px.svg";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 function EditWarehouse() {
@@ -94,11 +94,13 @@ function EditWarehouse() {
   return (
     <div className="warehouse__edit">
       <div className="warehouse__wrapper">
-        <img
-          className="warehouse__icon"
-          src={arrowImage}
-          alt="Arrow Icon to go previous page"
-        />
+        <Link to="/warehouses" className="warehouse__link">
+          <img
+            className="warehouse__icon"
+            src={arrowImage}
+            alt="Arrow Icon to go previous page"
+          />
+        </Link>
         <h1 className="warehouse__title">Edit Warehouse</h1>
       </div>
       <WarehouseForm

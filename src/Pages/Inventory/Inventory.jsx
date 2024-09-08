@@ -39,7 +39,7 @@ function Inventory() {
   }, [])
 
   return (
-    <ListPage itemList={inventoryList} columns={columns} header='Iventory' singularLabel={'Inventory'} actionPath={'warehouse'} />
+    <ListPage itemList={inventoryList} columns={columns} header='Iventory' singularLabel={'Inventory'} actionPath={'inventory'} />
   )
 }
   

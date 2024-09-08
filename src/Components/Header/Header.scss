@@ -25,6 +25,11 @@
     }
   }
 
+  @include desktop {
+    padding-left: 14%;
+    padding-right: 14%;
+  }
+
   &__wrapper-logo {
     height: 28px;
     @include tablet{

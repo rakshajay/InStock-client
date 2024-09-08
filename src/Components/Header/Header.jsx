@@ -13,8 +13,10 @@ function Header() {
     <header className="header">
       <div className="header__container"> 
         <div className="header__wrapper-logo">
-          <img src={logoImg} alt="" />
-        </div>
+          <Link to="/">
+          <img src={logoImg} alt="Instock Liogo" />
+          </Link>
+      </div>
         <div className="header__wrapper-buttons">
           <Link to={"/"} className="header__link">
             <button
