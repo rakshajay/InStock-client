@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ListPage.scss";
 import List from "../List/List";
 
-function ListPage({itemList, columns, header, singularLabel}) {
+function ListPage({itemList, columns, header, singularLabel, actionPath}) {
 
   const [filteredList, setFilteredList] = useState(itemList);
   const [search, setSearch] = useState('');
@@ -36,7 +36,7 @@ function ListPage({itemList, columns, header, singularLabel}) {
           </div>
         </div>
 
-        <List itemList={filteredList} columns={columns} />
+        <List itemList={filteredList} columns={columns} actionPath={actionPath} />
       </div>
     );
   }
