@@ -9,6 +9,10 @@ p{
     margin: 0;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -20,10 +24,10 @@ p{
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        padding: 24px;
+        padding: 32px 24px 24px 24px;
         border-bottom: 1px solid $secondary-color-cloud;
         @include tablet{
-            padding: 25px;
+            padding: 32px 32px 21px 32px;
         }
     }
 
@@ -39,10 +43,12 @@ p{
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 24px;
+        padding: 16px 24px 18px 24px;
         gap: 16px;
         @include tablet{
             flex-direction: row;
+            gap: 24px;
+            padding: 16px 32px 32px 32px;
         }
     }
 
@@ -52,10 +58,12 @@ p{
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
-        padding-right:16px;
         gap: 16px;
         @include tablet{
-            border-right: 1px solid $secondary-color-slate;
+            width: 50%;
+            padding-right:32px;
+            gap: 32px;
+            border-right: 1px solid $secondary-color-cloud;
         }
     }
     &__info-right{
@@ -65,6 +73,11 @@ p{
         justify-content: flex-start;
         width: 100%;
         gap: 16px;
+        @include tablet{
+            width: 50%;
+            gap: 32px;
+            padding-left: 8px;
+        }
     }
 
     &__info-split{
@@ -112,11 +125,11 @@ p{
     margin: 0;
 }
 
-.item-subheader{
+.item-header{
    @include mobile-p3-body-small;
    text-transform: uppercase;
    font-weight: 600;
    color: $secondary-color-slate;
-   padding-bottom: 8px;
+   padding-bottom: 4px;
 }
 

@@ -1,38 +1,22 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
-.inventory {
-    position: relative;
-    top: -3rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0.75rem;
-    background-color: $primary-color-white;
-    border-radius: 0.2rem;
+* {
+    margin: 0;
+}
 
-    @include tablet {
-        margin: 0 2rem;
-        top: -5.5rem;
-    }
+.inventory {
+
 
     &-heading {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 0.75rem;
-        border-bottom: 1.25px solid $secondary-color-cloud;
-
-        h1 {
-            margin: 1.75rem 0 ;
-            @include tablet{
-                margin: 1.75rem 0 1.25rem; 
-            }
-        }
-
-        img {
-            margin-left: 2rem;
-            @include tablet{
-                margin: 1.75rem 0 1.25rem 2rem; 
-            }
+        align-items: baseline;
+        gap: 10px;
+        padding: 32px 24px 24px 24px;
+        border-bottom: 1px solid $secondary-color-cloud;
+        @include tablet{
+            padding: 32px 32px 21px 32px;
         }
     }
 
@@ -46,17 +30,23 @@
         &__details {
             display: flex;
             flex-direction: column;
-            padding: 0 1.25rem 1.25rem;
+            padding: 16px 24px 24px;
+            border-bottom: 1px solid $secondary-color-cloud;
+            @include tablet{
+                padding: 16px 32px 24px;
+                border-right: 1px solid $secondary-color-cloud;
+                border-bottom: none;
+            }
             
             h2 {
-                margin-top: 0.25rem;
+                margin-bottom: 8px;
                 @include desktop {
-                    margin-bottom: .75rem;
+                    margin-bottom: 28px;;
                 }
             }
 
             h3 {
-                margin: 0.75rem 0 0.25rem;
+                margin: 16px 0 0.25rem;
                 @include tablet {
                     margin: 1.5rem 0 0.25rem;
                 }
@@ -96,16 +86,21 @@
                 background-position: right 10px center;
                 background-size: 24px;
                 padding-left: 1rem;
-                @include p3-body-small;
+                @include mobile-p2-body-medium;
+                @include tablet{
+                    @include p2-body-medium;
+                };
             }
 
             textarea {
                 box-sizing: border-box;
+                @include mobile-p2-body-medium;
                 width: 100%;
                 height: 6.5rem;
                 resize: none;
                 @include tablet {
                     height: 7.5rem;
+                    @include p2-body-medium;
                 }
             }
 
@@ -125,9 +120,11 @@
                     align-items: center;
                     gap: 0.25rem;
                 }
-
                 label {
-                    @include p3-body-small;
+                    @include mobile-p2-body-medium;
+                    @include tablet{
+                        @include p2-body-medium;
+                    }
                 }
             }
 
@@ -136,6 +133,9 @@
                 padding: 0 2rem 0.75rem;
                 width: 100%;
             }
+        }
+        &__details-lower{
+            border: none;
         }
     }
 
@@ -151,9 +151,10 @@
         button {
             height: 2.25rem;
             width: 100%;
-            @include mobile-p3-body-small;
+            @include mobile-p2-body-medium;
 
             @include tablet {
+                @include p2-body-medium;
                 height: 2.375rem;
                 width: auto;
             }
@@ -184,8 +185,4 @@
             padding: 0 2rem;
         }
     }
-}
-
-#border-right {
-    border-right: 1.25px solid $secondary-color-cloud;
 }

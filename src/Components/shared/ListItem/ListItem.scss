@@ -9,6 +9,9 @@
     border-bottom: 1px solid $secondary-color-cloud;
     padding: 1rem 1.5rem;
     gap: 1rem;
+    @include tablet{
+        padding: 1rem 32px;
+    }
 
     &__pair {
         width: calc(50% - 0.5rem);

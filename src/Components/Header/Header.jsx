@@ -11,30 +11,33 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header__wrapper-logo">
-        <Link to="/">
+      <div className="header__container"> 
+        <div className="header__wrapper-logo">
+          <Link to="/">
           <img src={logoImg} alt="Instock Liogo" />
-        </Link>
+          </Link>
       </div>
-      <div className="header__wrapper-buttons">
-        <Link to={"/"} className="header__link">
-          <button
-            className={`header__button ${
-              route === "warehouses" ? "active-button" : ""
-            }`}
-          >
-            Warehouses
-          </button>
-        </Link>
-        <Link to={"/inventory"} className="header__link">
-          <button
-            className={`header__button ${
-              route === "inventory" ? "active-button" : ""
-            }`}
-          >
-            Inventory
-          </button>
-        </Link>
+        <div className="header__wrapper-buttons">
+          <Link to={"/"} className="header__link">
+            <button
+              className={`header__button ${
+                route === "warehouses" ? "active-button" : ""
+              }`}
+            >
+              Warehouses
+            </button>
+          </Link>
+          <Link to={"/inventory"} className="header__link">
+            <button
+              className={`header__button ${
+                route === "inventory" ? "active-button" : ""
+              }`}
+            >
+              Inventory
+            </button>
+          </Link>
+        </div>
+
       </div>
     </header>
   );

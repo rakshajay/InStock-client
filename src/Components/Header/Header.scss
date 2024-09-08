@@ -3,18 +3,26 @@
 
 .header {
   background-color: $background-graphite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  padding-bottom: 5rem;
+  height: 200px;
   font-family: "Titillium";
+  @include tablet{
+    height: 186px;
+  }
 
-  @include tablet {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 6rem;
+  &__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px;
+    }
   }
 
   @include desktop {
@@ -23,36 +31,43 @@
   }
 
   &__wrapper-logo {
-    height: 23px;
+    height: 28px;
+    @include tablet{
+      padding-top: 0;
+    }
   }
 
   &__wrapper-buttons {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 16px;
 
     @include tablet {
       width: auto;
+      margin:0;
     }
   }
 
   &__button {
     background-color: inherit;
     color: $secondary-color-cloud;
+    font-weight: 600;
+
+    &:focus {
+      background-color: $primary-color-instock-black;
+      color: $primary-color-white;
+      text-decoration: none;
+    }
 
     &:hover {
       text-decoration: underline;
       color: $primary-color-white;
     }
-
-    &:active {
-      background-color: $primary-color-instock-black;
-    }
+  }
+  .active-button {
+    background-color: $primary-color-instock-black;
+    color: $primary-color-white;
+    font-weight: 600;
   }
 }
 
-.active-button {
-  background-color: $primary-color-instock-black;
-}

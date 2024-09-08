@@ -54,9 +54,11 @@
       margin: 0 16px;
       padding: 0 13px;
       border: 1px solid $secondary-color-cloud;
+      @include mobile-p2-body-medium;
       width: 90%;
 
       @include tablet {
+        @include p2-body-medium;
         height: 38px;
       }
     }
