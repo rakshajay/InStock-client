@@ -48,22 +48,21 @@
     color: $secondary-color-cloud;
     font-weight: 600;
 
-    &:hover {
-      text-decoration: underline;
-      color: $primary-color-white;
-    }
-
-    &:active {
+    &:focus {
       background-color: $primary-color-instock-black;
       color: $primary-color-white;
       text-decoration: none;
     }
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color-white;
+    }
+  }
+  .active-button {
+    background-color: $primary-color-instock-black;
+    color: $primary-color-white;
+    font-weight: 600;
   }
 }
 
-.active-button {
-  background-color: $primary-color-instock-black;
-  text-decoration: none;
-  color: $primary-color-white;
-
-}

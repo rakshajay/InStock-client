@@ -45,11 +45,11 @@ function InventoryItemDetails() {
         <div className="main-container__row-bottom">
           <div className="main-container__info-left">
             <div>
-              <p className="item-subheader">Item Description:</p>
+              <p className="item-header">Item Description:</p>
               <p>{itemDetails.description}</p> 
             </div>
             <div>
-              <p className="item-subheader">Category:</p>
+              <p className="item-header">Category:</p>
               <p>{itemDetails.category}</p> 
             </div>
           </div>
@@ -57,16 +57,16 @@ function InventoryItemDetails() {
             <div className="main-container__info-split">
               <div className="main-container__info-right">
                 <div> 
-                  <p className="item-subheader">Status:</p>
+                  <p className="item-header">Status:</p>
                   <StatusTag status={itemDetails.status} />
                 </div>
                 <div>
-                  <p className="item-subheader">Warehouse:</p>
+                  <p className="item-header">Warehouse:</p>
                   <p>{itemDetails.warehouse_name}</p> 
                 </div>
               </div> 
               <div className="main-container__item-quantity">
-                <p className="item-subheader">Quantity:</p>
+                <p className="item-header">Quantity:</p>
                   <p>{itemDetails.quantity}</p> 
                 </div>
             </div>
