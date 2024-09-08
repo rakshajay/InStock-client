@@ -54,10 +54,10 @@
       margin: 0 16px;
       padding: 0 13px;
       border: 1px solid $secondary-color-cloud;
+      width: 90%;
 
       @include tablet {
         height: 38px;
-        width: 90%;
       }
     }
 
