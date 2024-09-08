@@ -21,6 +21,8 @@
   &__wrapper {
     display: flex;
     padding-left: 16px;
+    align-items: center;
+    height: 91px;
 
     @include tablet {
       border-bottom: 1px solid $secondary-color-cloud;
@@ -65,6 +67,15 @@
     &-submit {
       color: $primary-color-white;
       background-color: $primary-color-instock-indigo-blue;
+    }
+  }
+
+  &__link {
+    @include tablet {
+      margin-top: 5px;
+    }
+    @include desktop {
+      margin-top: 10px;
     }
   }
 }

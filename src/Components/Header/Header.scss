@@ -17,6 +17,11 @@
     padding-bottom: 6rem;
   }
 
+  @include desktop {
+    padding-left: 14%;
+    padding-right: 14%;
+  }
+
   &__wrapper-logo {
     height: 23px;
   }

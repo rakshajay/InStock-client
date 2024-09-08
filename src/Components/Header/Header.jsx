@@ -12,7 +12,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header__wrapper-logo">
-        <img src={logoImg} alt="" />
+        <Link to="/">
+          <img src={logoImg} alt="Instock Liogo" />
+        </Link>
       </div>
       <div className="header__wrapper-buttons">
         <Link to={"/"} className="header__link">

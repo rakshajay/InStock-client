@@ -3,7 +3,7 @@ import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import arrowImage from "../../Assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function AddNewWarehouse() {
   const apiBaseURL = "http://localhost:8080";
@@ -80,11 +80,13 @@ function AddNewWarehouse() {
   return (
     <div className="warehouse__add">
       <div className="warehouse__wrapper">
-        <img
-          className="warehouse__icon"
-          src={arrowImage}
-          alt="Arrow Icon to go previous page"
-        />
+        <Link to="/warehouses" className="warehouse__link">
+          <img
+            className="warehouse__icon"
+            src={arrowImage}
+            alt="Arrow Icon to go previous page"
+          />
+        </Link>
         <h2 className="warehouse__title">Add New Warehouse</h2>
       </div>
       <WarehouseForm
