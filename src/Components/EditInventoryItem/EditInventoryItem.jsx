@@ -48,8 +48,10 @@ function AddNewInventory() {
       }
       navigate(`/inventory/${itemId}`);
     } catch (error) {
-      console.error("There was an error editing the item", error.response?.data || error.message);
       console.error("There was an error adding the item", error);
+      if(status != "outOfStock" && formData.quantity === 0){
+        alert("Please provide a quantity greater than 0.")
+      }; 
       if (!formData.warehouse_id || 
           !formData.item_name || 
           !formData.description ||
@@ -58,13 +60,9 @@ function AddNewInventory() {
         ) {
         alert("Please make sure all required fields are filled out.")
       }
-      if(status != "outOfStock" && formData.quantity === 0){
-        alert("Please provide a quantity greater than 0.")
-      }; 
     }
   };
   
-
   const [categories, setCategories] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
 
