@@ -48,7 +48,18 @@ function AddNewInventory() {
       }
     } catch (error) {
       console.error("There was an error editing the item", error.response?.data || error.message);
-      alert("Failed to edit item. Please try again.");
+      console.error("There was an error adding the item", error);
+      if (!formData.warehouse_id || 
+          !formData.item_name || 
+          !formData.description ||
+          !formData.category ||
+          !formData.status
+        ) {
+        alert("Please make sure all required fields are filled out.")
+      }
+      if(status != "outOfStock" && formData.quantity === 0){
+        alert("Please provide a quantity greater than 0.")
+      }; 
     }
   };
   
@@ -120,7 +131,10 @@ function AddNewInventory() {
               value= {formData.item_name}
               name="item_name" 
               onChange={(e) => handleInputChange(e)}
+              required
+
                />
+               
             <label>
               <h3>
                 Description
@@ -130,6 +144,7 @@ function AddNewInventory() {
                 className="inventory-section__details-description"
                 name="description"
                 onChange={(e) => handleInputChange(e)}
+                required
               ></textarea>
             
             <label>
@@ -140,6 +155,7 @@ function AddNewInventory() {
                 name="category"
                 value={formData.category}
                 onChange={(e) => handleInputChange(e)}
+                required
               >
                 <option value="" disabled selected>
                   Please select
@@ -188,6 +204,7 @@ function AddNewInventory() {
                   value= {formData.quantity}
                   placeholder="0" 
                   onChange={(e) => handleInputChange(e)}
+                  required
                   />
               </label>
             )}
@@ -198,6 +215,7 @@ function AddNewInventory() {
                 name="warehouse_id"
                 value={formData.warehouse_id}
                 onChange={(e) => handleInputChange(e)}
+                required
                 >
                 <option value="" disabled selected>
                   Please select
@@ -221,6 +239,7 @@ function AddNewInventory() {
             Save
           </button>
         </div>
+        
       </form>
       </div>
   );
