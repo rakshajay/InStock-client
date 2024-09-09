@@ -12,7 +12,7 @@ function AddNewInventory() {
   };
 
   const [formData, setFormData] = useState({
-    warehouse_id: 0,
+    warehouse_id: 1,
     item_name: "",
     description: "",
     category: "",
@@ -76,6 +76,12 @@ function AddNewInventory() {
       try {
         const response = await axios.get("http://localhost:8080/warehouses");
         setWarehouses(response.data);
+        const firstWarehouseId=response.data[0].id;
+        setFormData({
+          ...formData,
+          warehouse_id: firstWarehouseId,
+        });
+
       } catch (error) {
         console.error("Error fetching warehouses", error);
       }
