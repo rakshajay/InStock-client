@@ -11,11 +11,7 @@
 
     @include tablet {
       align-items: center;
-      padding-top: 16px;
-    }
-
-    @include desktop {
-      padding-left: 12px;
+      padding-top: 1rem;
     }
   }
 
@@ -23,41 +19,43 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 1rem;
+    margin-bottom: 1rem;
     border-top: 1px solid $secondary-color-cloud;
 
     @include tablet {
       border-top: none;
       border-right: 1px solid $secondary-color-cloud;
       width: 50%;
-      padding: 0 16px;
+      padding: 0 1rem;
     }
 
     &-title {
-      padding: 0 16px;
+      padding: 0 1rem;
       font-weight: 500;
-      margin-bottom: 0px;
+      margin-bottom: 0rem;
       margin-top: 0;
     }
 
     &-label {
-      margin-top: 16px;
-      margin-bottom: 4px;
-      padding: 0 16px;
-      font-size: 13px;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      padding: 0 1rem;
+      font-size: 0.8125rem;
     }
 
     &-input {
       width: auto;
-      font-size: 11px;
-      margin: 0 16px;
-      padding: 0 13px;
+      font-size: 0.6875rem;
+      margin: 0 1rem;
+      padding: 0 0.8125rem;
       border: 1px solid $secondary-color-cloud;
+      @include mobile-p2-body-medium;
       width: 90%;
 
       @include tablet {
-        height: 38px;
+        @include p2-body-medium;
+        height: 2.375rem;
       }
     }
 
@@ -73,13 +71,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 16px 16px;
+    padding: 1rem 1rem;
     border-top: 1px solid $secondary-color-cloud;
 
     @include tablet {
       border-top: none;
       width: 50%;
-      padding: 0 16px;
+      padding: 0 1rem;
     }
   }
 }

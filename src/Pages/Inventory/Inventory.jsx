@@ -21,7 +21,7 @@ function Inventory() {
     
     }},
     {label: 'category', values: ['category']},
-    {label: 'Qty', values: ['quantity']},
+    {label: 'quantity', values: ['quantity']},
     {label: 'warehouse', values: ['warehouse_name']},
   ];
 

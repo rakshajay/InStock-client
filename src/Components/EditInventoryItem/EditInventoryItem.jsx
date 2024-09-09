@@ -5,13 +5,14 @@ import back from "../../assets/icons/arrow_back-24px.svg";
 import axios from 'axios'
 
 function AddNewInventory() {
-  const [status, setStatus] = useState("inStock");
+  const [status, setStatus] = useState();
   const [formData, setFormData] = useState({
     item_name: '',
     description: '',
     category: '',
     quantity: 0,
-    warehouse_id: 0
+    warehouse_id: 0,
+    status: ''
   });
 
 
@@ -66,9 +67,11 @@ function AddNewInventory() {
           description: response.data.description || '',
           category: response.data.category || '',
           quantity: response.data.quantity || 0,
-          warehouse_id: response.data.warehouse_id || 0
+          warehouse_id: response.data.warehouse_id || 0,
+          status: response.data.status || ''
         });
-        // setFormData(response.data);
+
+        setStatus(response.data.status === "Out of Stock" ? "outOfStock" : "inStock");
       } catch (error) {
         console.error('error getting inventory item details', error);
       }
@@ -100,15 +103,15 @@ function AddNewInventory() {
   }, [])
 
   return (
-    <div className="inventory">
+    <div>
       <div className="inventory-heading">
-        <img src={back} alt="" />
+        <Link to={`/inventory/${itemId}`}><img src={back} alt="" /></Link>
         <h1>Edit Inventory Item</h1>
       </div>
 
       <form onSubmit={handleSubmit}>
         <div className="inventory-section">
-          <div className="inventory-section__details" id="border-right">
+          <div className="inventory-section__details">
             <h2>Item Details</h2>
             <label>
               <h3>Item Name</h3></label>
@@ -149,7 +152,7 @@ function AddNewInventory() {
               </select>
           </div>
 
-          <div className="inventory-section__details">
+          <div className="inventory-section__details inventory-section__details-lower">
             <h2>Item Availability</h2>
             <label>
               <h3>Status</h3></label>
@@ -219,7 +222,7 @@ function AddNewInventory() {
           </button>
         </div>
       </form>
-    </div>
+      </div>
   );
 }
 

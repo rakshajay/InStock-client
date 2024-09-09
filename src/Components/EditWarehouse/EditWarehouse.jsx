@@ -101,7 +101,7 @@ function EditWarehouse() {
             alt="Arrow Icon to go previous page"
           />
         </Link>
-        <h2 className="warehouse__title">Edit Warehouse</h2>
+        <h1 className="warehouse__title">Edit Warehouse</h1>
       </div>
       <WarehouseForm
         handleChange={handleChange}

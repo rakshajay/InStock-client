@@ -29,7 +29,7 @@ function WarehouseDetails() {
       },
     },
     { label: "category", values: ["category"] },
-    { label: "Qty", values: ["quantity"] },
+    { label: "quantity", values: ["quantity"] },
   ];
 
   const { warehouseId } = useParams();
@@ -79,10 +79,11 @@ function WarehouseDetails() {
             </h1>
           </div>
           <button
-            className="warehouse-details__icon-button primary-button"
+            className="edit-button primary-button"
             onClick={() => navigate(`/warehouse/${warehouseId}/edit`)}
           >
             <Icon iconSrc={"/src/Assets/Icons/edit-white-24px.svg"} />
+            <p className="button-text">Edit</p>
           </button>
         </div>
         <div className="warehouse-details__details">
