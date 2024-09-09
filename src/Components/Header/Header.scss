@@ -3,10 +3,10 @@
 
 .header {
   background-color: $background-graphite;
-  height: 200px;
+  height: 12.5rem;
   font-family: "Titillium";
   @include tablet{
-    height: 186px;
+    height: 11.625rem;
   }
 
   &__container{
@@ -14,24 +14,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    padding: 24px;
+    gap: 1.5rem;
+    padding: 1.5rem;
 
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 28px;
+      padding: 1.75rem;
+    }
+    @include desktop {
+      padding: 1.75rem 8.125rem;
     }
   }
 
-  @include desktop {
-    padding-left: 14%;
-    padding-right: 14%;
-  }
+
 
   &__wrapper-logo {
-    height: 28px;
+    height: 1.75rem;
     @include tablet{
       padding-top: 0;
     }

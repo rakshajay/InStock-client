@@ -1,9 +1,15 @@
 .icon {
-    width: 32px;
+    width: 2rem;
     display: flex;
 
     img {
-        width: 24px;
+        width: 1.5rem;
         margin: auto;
+        transition: transform 0.3s ease;
     }
+
+}
+
+.icon-select:hover{
+    transform: translateX(4px);
 }

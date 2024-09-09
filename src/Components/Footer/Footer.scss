@@ -5,15 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px auto;
+  margin: 1rem auto;
 
   &__text {
     color: $secondary-color-slate;
     font-weight: 500;
-    font-size: 8px;
+    font-size: 0.5rem;
 
     @include tablet {
-      font-size: 10px;
+      font-size: 0.625rem;
     }
   }
 }
