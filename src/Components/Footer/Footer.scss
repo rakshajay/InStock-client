@@ -10,7 +10,7 @@
   &__text {
     color: $secondary-color-slate;
     font-weight: 500;
-    font-size: 0.5rem;
+    @include mobile-p3-body-small;
 
     @include tablet {
       font-size: 0.625rem;
