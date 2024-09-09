@@ -3,16 +3,36 @@ import {useParams, Link, useNavigate} from 'react-router-dom';
 import "./EditInventoryItem.scss";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import axios from 'axios'
+import { Icon } from "../shared/Icon/Icon";
 
 function AddNewInventory() {
   const [status, setStatus] = useState();
+  const [errors, setErrors] = useState({
+    warehouse_id: "",
+    item_name: "",
+    description: "",
+    category: "",
+    status: "inStock",
+    quantity: "",
+  })
+
+  const getError = (errorMessage) => {
+    return (
+      errorMessage && (
+        <div className="inventory-section__error-text">
+          <Icon iconSrc={'/src/Assets/Icons/error-24px.svg'}/> <p>{errorMessage}</p>
+        </div>
+      )
+    )
+  }
+
   const [formData, setFormData] = useState({
-    item_name: '',
-    description: '',
-    category: '',
-    quantity: 0,
-    warehouse_id: 0,
-    status: ''
+    item_name: "",
+    description: "",
+    category: "",
+    quantity: "",
+    warehouse_id: "",
+    status: "inStock"
   });
 
   const navigate = useNavigate();
@@ -24,9 +44,27 @@ function AddNewInventory() {
 
   const handleInputChange = (e) => {
     const {name, value} = e.target;
+
+    if(value === '') {
+      handleOnInvalid(name)
+    } else {
+      handleOnInvalid(name, '')
+    }
+
+    if(name === 'quantity' && value === '0' && formData.status === 'inStock') {
+      handleOnInvalid('quantity', "Quantity can't be set 0 if status is In Stock")
+    }
+
     setFormData({
       ...formData, 
       [name]: value,
+    });
+  };
+
+  const handleOnInvalid = (fieldName, message = 'This field is required') => {
+    setErrors({
+      ...errors,
+      [fieldName]: message,
     });
   };
 
@@ -34,10 +72,10 @@ function AddNewInventory() {
     event.preventDefault();
   
     const dataToSend = {
-      ...formData, 
-      warehouse_id: parseInt(formData.warehouse_id, 10),
-      quantity: status === "outOfStock" ? 0 : parseInt(formData.quantity, 10),
-      status: status === "outOfStock" ? "Out of Stock" : "In Stock",
+      ...formData,
+      warehouse_id: parseInt(formData.warehouse_id),
+      quantity: formData.status ? parseInt(formData.quantity) : 0,
+      status: formData.status ? "In Stock": "Out of Stock",
     };
   
     try {
@@ -49,17 +87,17 @@ function AddNewInventory() {
       navigate(`/inventory/${itemId}`);
     } catch (error) {
       console.error("There was an error adding the item", error);
-      if(status != "outOfStock" && formData.quantity === 0){
-        alert("Please provide a quantity greater than 0.")
-      }; 
       if (!formData.warehouse_id || 
-          !formData.item_name || 
-          !formData.description ||
-          !formData.category ||
-          !formData.status
-        ) {
-        alert("Please make sure all required fields are filled out.")
-      }
+        !formData.item_name || 
+        !formData.description ||
+        !formData.category ||
+        !formData.status
+      ) {
+      alert("Please make sure all required fields are filled out.")
+    }
+    if(status != "outOfStock" && formData.quantity === 0){
+      alert("Please provide a quantity greater than 0.")
+    }; 
     }
   };
   
@@ -130,9 +168,12 @@ function AddNewInventory() {
               value= {formData.item_name}
               name="item_name" 
               onChange={(e) => handleInputChange(e)}
+              onInvalid={(e) => handleOnInvalid(e, 'This field is required')}
               required
+              className={errors.item_name ? 'error' : ''}
 
                />
+               {getError(errors.item_name)}
                
             <label>
               <h3>
@@ -140,12 +181,13 @@ function AddNewInventory() {
               </h3></label>
               <textarea
                 value= {formData.description}
-                className="inventory-section__details-description"
+                className={`inventory-section__details-description ${errors.description ? 'error' : ''}`}
                 name="description"
                 onChange={(e) => handleInputChange(e)}
                 required
+                onInvalid={(e) => handleOnInvalid(e, 'This field is required')}
               ></textarea>
-            
+            {getError(errors.description)}
             <label>
               <h3>
                 Category
@@ -165,6 +207,7 @@ function AddNewInventory() {
                   </option>
                 ))}
               </select>
+              {getError(errors.category)}
           </div>
 
           <div className="inventory-section__details inventory-section__details-lower">
@@ -177,7 +220,7 @@ function AddNewInventory() {
                     type="radio"
                     name="status"
                     value="inStock"
-                    checked={status === "inStock"}
+                    checked={formData.status === "inStock"}
                     onChange={(e) => handleStatusChange(e)}
                   />
                   <label htmlFor="inStock">In stock</label>
@@ -187,7 +230,7 @@ function AddNewInventory() {
                     type="radio"
                     name="status"
                     value="outOfStock"
-                    checked={status === "outOfStock"}
+                    checked={formData.status === "outOfStock"}
                     onChange={(e) => handleStatusChange(e)}
                   />
                   <label htmlFor="outOfStock">Out of stock</label>
@@ -203,8 +246,10 @@ function AddNewInventory() {
                   value= {formData.quantity}
                   placeholder="0" 
                   onChange={(e) => handleInputChange(e)}
-                  required
+                  required={formData.status === 'inStock'}
+                  className={`${errors.quantity ? 'error' : ''}`}
                   />
+                  {getError(errors.quantity)}
               </label>
             )}
 
