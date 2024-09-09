@@ -16,7 +16,7 @@ function ListItem({ itemData, columns, actionPath, showDeleteModal}) {
         </div>
       ))}
       <div className="list-item__actions">
-      <button onClick={() => showDeleteModal(itemData.id, itemData.warehouse_name)}>
+      <button id="no-styling" onClick={() => showDeleteModal(itemData.id, itemData.warehouse_name)}>
           <Icon iconSrc={"/src/Assets/Icons/delete_outline-24px.svg"} />
         </button>
         <Link to={`/${actionPath}/${itemData.id}/edit`}>
