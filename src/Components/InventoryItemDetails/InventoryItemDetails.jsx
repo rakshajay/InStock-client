@@ -4,24 +4,15 @@ import mobileEdit from '../../Assets/Icons/edit-white-24px.svg'
 import {Link, useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import StatusTag from "../shared/StatusTag/StatusTag";
 
 
 
-function InventoryItemDetails({itemData}) {
+function InventoryItemDetails() {
 
-  const [stockTag, setStockTag] = useState();
   const [itemDetails, setItemDetails] = useState({});
 
   const {itemId} = useParams();
-
-  const setStock = () =>{
-    if (itemDetails.quantity > 0){
-      setStockTag("item-status--inStock")
-    } else {
-      setStockTag("item-status--outOfStock")
-    }
-    console.log(stockTag)
-  }
 
   useEffect(() => {
     const getItemDetails = async () => {
@@ -29,7 +20,6 @@ function InventoryItemDetails({itemData}) {
         const response = await axios.get(`http://localhost:8080/inventories/${itemId}`);
         console.log(response.data)
         setItemDetails(response.data);
-        setStock();
 
       } catch (e) {
         console.log('error getting inventory item details', e);
@@ -44,19 +34,22 @@ function InventoryItemDetails({itemData}) {
       <section className="main-container">
         <div className="main-container__row-top">
           <div className="main-container__row-title">
-            <Link to='/warehouse/:warehouseId/inventory/'><img src={backArrow} /></Link>
+            <Link to={`/warehouse/${itemDetails.warehouse_id}`}><img src={backArrow} /></Link>
             <h1 className="item-title">{itemDetails.item_name}</h1>
           </div>
-          <Link to="/warehouse/:warehouseId/inventory/:itemId/edit"><button className="primary-button small-button"><img src={mobileEdit}/></button></Link>
+          <Link to={`/inventory/${itemDetails.id}/edit`}><button className="primary-button edit-button">
+            <img className="edit-icon" src={mobileEdit}/>
+            <p className="button-text">Edit</p>
+            </button></Link>
         </div>
         <div className="main-container__row-bottom">
           <div className="main-container__info-left">
             <div>
-              <p className="item-subheader">Item Description:</p>
+              <p className="item-header">Item Description:</p>
               <p>{itemDetails.description}</p> 
             </div>
             <div>
-              <p className="item-subheader">Category:</p>
+              <p className="item-header">Category:</p>
               <p>{itemDetails.category}</p> 
             </div>
           </div>
@@ -64,16 +57,16 @@ function InventoryItemDetails({itemData}) {
             <div className="main-container__info-split">
               <div className="main-container__info-right">
                 <div> 
-                  <p className="item-subheader">Status:</p>
-                  <p className={`item-status ${stockTag}`} >{itemDetails.status}</p> 
+                  <p className="item-header">Status:</p>
+                  <StatusTag status={itemDetails.status} />
                 </div>
                 <div>
-                  <p className="item-subheader">Warehouse:</p>
+                  <p className="item-header">Warehouse:</p>
                   <p>{itemDetails.warehouse_name}</p> 
                 </div>
               </div> 
               <div className="main-container__item-quantity">
-                <p className="item-subheader">Quantity:</p>
+                <p className="item-header">Quantity:</p>
                   <p>{itemDetails.quantity}</p> 
                 </div>
             </div>

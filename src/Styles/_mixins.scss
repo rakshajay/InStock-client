@@ -1,6 +1,6 @@
 
 @mixin tablet {
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     @content;
   }
 }
@@ -16,34 +16,40 @@
 
 
 @mixin p1-body-large {
-  font-size: 16px;
-  line-height: 28px;
+  font-family: "Titillium";
+  font-size: 1rem;
+  line-height: 1.75rem;
 }
 
 @mixin p2-body-medium {
-  font-size: 14px;
-  line-height: 22px;
+  font-family: "Titillium";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 @mixin p3-body-small {
-  font-size: 12px;
-  line-height: 18px;
+  font-family: "Titillium";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
 }
 
 // Mixins for Mobile Text Styles
 
 @mixin mobile-p1-body-large {
-  font-size: 15px;
-  line-height: 26px;
+  font-family: "Titillium";
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
 }
 
 @mixin mobile-p2-body-medium {
-  font-size: 13px;
-  line-height: 20px;
+  font-family: "Titillium";
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 }
 
 @mixin mobile-p3-body-small {
-  font-size: 11px;
-  line-height: 16px;
+  font-family: "Titillium";
+  font-size: 0.6875rem;
+  line-height: 1rem;
 }
 
