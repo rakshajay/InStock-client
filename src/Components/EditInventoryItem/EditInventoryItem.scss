@@ -50,7 +50,6 @@
                 padding: 0.25rem 0.75rem;
                 margin-bottom: 0;
                 border-radius: 1.25rem;
-                border: 1px solid $secondary-color-cloud;
                 @include tablet {
                     height: 2.375rem;
                 }
@@ -58,10 +57,6 @@
                 &:active {
                     outline: 0;
                     border: 0.125rem solid $primary-color-instock-indigo-blue;
-                }
-
-                .error {
-                    border: 1px solid red;
                 }
             }
 

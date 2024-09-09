@@ -163,7 +163,7 @@ function AddNewInventory() {
               <h3>Description</h3>
             </label>
             <textarea
-              className="inventory-section__details-description"
+              className={`inventory-section__details-description ${errors.description ? 'error' : ''}`}
               name="description"
               placeholder="Please enter a brief item description..."
               value={formData.description}
@@ -231,6 +231,7 @@ function AddNewInventory() {
                   value={formData.quantity}
                   onChange={handleInputChange}
                   required={formData.status === 'inStock'}
+                  className={`${errors.quantity ? 'error' : ''}`}
                 />
                 {getError(errors.quantity)}
               </label>
