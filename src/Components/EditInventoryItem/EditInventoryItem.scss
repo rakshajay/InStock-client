@@ -4,17 +4,18 @@
 * {
     margin: 0;
 }
+
 .inventory {
 
     &-heading {
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        gap: 10px;
-        padding: 32px 24px 24px 24px;
+        gap: 0.625rem;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
         border-bottom: 1px solid $secondary-color-cloud;
         @include tablet{
-            padding: 32px 32px 21px 32px;
+            padding: 2rem 2rem 1.3125rem 2rem;
         }
      }
 
@@ -28,30 +29,19 @@
         &__details {
             display: flex;
             flex-direction: column;
-            padding: 16px 24px 24px;
+            padding: 1rem 1.5rem 1.5rem;
             border-bottom: 1px solid $secondary-color-cloud;
             @include tablet{
-                padding: 16px 32px 24px;
+                padding: 1rem 2rem 1.5rem;
                 border-right: 1px solid $secondary-color-cloud;
                 border-bottom: none;
             }
-            
-            h2 {
-                margin-bottom: 8px;
-                @include desktop {
-                    margin-bottom: 28px;;
-                }
+
+            h2{
+                margin: 0;
             }
 
-            h3 {
-                margin: 16px 0 0.25rem;
-                @include tablet {
-                    margin: 1.5rem 0 0.25rem;
-                }
-                @include desktop {
-                    margin: 1.25rem 0 0.25rem;
-                }
-            }
+
 
             input,
             select,
@@ -77,8 +67,8 @@
                 appearance: none;
                 background-image: url("../../assets/Icons/arrow_drop_down-24px.svg");
                 background-repeat: no-repeat;
-                background-position: right 10px center;
-                background-size: 24px;
+                background-position: right 0.625rem center;
+                background-size: 1.5rem;
                 padding-left: 1rem;
                 @include mobile-p2-body-medium;
                 @include tablet{
@@ -139,7 +129,7 @@
         flex-direction: row;
         align-items: center;
         gap: 1rem;
-        height: 70px;
+        height: 4.375rem;
         padding: 0 1rem;
         background-color: $background-grey;
 

@@ -24,10 +24,10 @@ p{
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        padding: 32px 24px 24px 24px;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
         border-bottom: 1px solid $secondary-color-cloud;
         @include tablet{
-            padding: 32px 32px 21px 32px;
+            padding: 2rem 2rem 1.3125rem 2rem;
         }
     }
 
@@ -35,7 +35,7 @@ p{
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        gap: 10px;
+        gap: 0.625rem;
     }
 
     &__row-bottom{
@@ -43,12 +43,12 @@ p{
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 16px 24px 18px 24px;
-        gap: 16px;
+        padding: 1rem 1.5rem 1.125rem 1.5rem;
+        gap: 1rem;
         @include tablet{
             flex-direction: row;
-            gap: 24px;
-            padding: 16px 32px 32px 32px;
+            gap: 1.5rem;
+            padding: 1rem 2rem 2rem 2rem;
         }
     }
 
@@ -58,11 +58,11 @@ p{
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
-        gap: 16px;
+        gap: 1rem;
         @include tablet{
             width: 50%;
             padding-right:32px;
-            gap: 32px;
+            gap: 2rem;
             border-right: 1px solid $secondary-color-cloud;
         }
     }
@@ -72,11 +72,11 @@ p{
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
-        gap: 16px;
+        gap: 1rem;
         @include tablet{
             width: 50%;
-            gap: 32px;
-            padding-left: 8px;
+            gap: 2rem;
+            padding-left: 0.5rem;
         }
     }
 
@@ -94,23 +94,23 @@ p{
 }
 
 .edit-button{
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     @include tablet{
-        height: 38px;
-        width: 81px;
-        border-radius: 20px;
-        gap: 8px;
+        height: 2.375rem;
+        width: 5.0625rem;
+        border-radius: 1.25rem;
+        gap: 0.5rem;
     }
 }
 
 .edit-icon{
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 .button-text{
     display:none;
@@ -130,6 +130,6 @@ p{
    text-transform: uppercase;
    font-weight: 600;
    color: $secondary-color-slate;
-   padding-bottom: 4px;
+   padding-bottom: 0.25rem;
 }
 
