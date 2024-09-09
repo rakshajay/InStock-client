@@ -12,7 +12,7 @@ function AddNewInventory() {
   };
 
   const [formData, setFormData] = useState({
-    warehouse_id: 0,
+    warehouse_id: 1,
     item_name: "",
     description: "",
     category: "",
@@ -37,7 +37,7 @@ function AddNewInventory() {
       quantity: status === "outOfStock" ? 0 : parseInt(formData.quantity), 
       status: status === "outOfStock" ? "Out of Stock" : "In Stock",
     };
-    //console.log("Sending data:", dataToSend);
+   
   
     try {
       const sendData = await axios.post("http://localhost:8080/inventories", dataToSend);
@@ -76,6 +76,12 @@ function AddNewInventory() {
       try {
         const response = await axios.get("http://localhost:8080/warehouses");
         setWarehouses(response.data);
+        const firstWarehouseId=response.data[0].id;
+        setFormData({
+          ...formData,
+          warehouse_id: firstWarehouseId,
+        });
+
       } catch (error) {
         console.error("Error fetching warehouses", error);
       }
@@ -88,7 +94,7 @@ function AddNewInventory() {
   return (
     <div className="inventory">
       <div className="inventory-heading">
-        <img src={back} alt="back-icon" />
+      <Link to="/inventory"><img src={back} alt="back-icon" /></Link>
         <h1>Add New Inventory Item</h1>
       </div>
 

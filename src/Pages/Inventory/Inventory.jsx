@@ -16,12 +16,12 @@ function Inventory() {
       )
     }},
     {label: 'Status', values: ['status'], customRenderer: (itemData) => {
-      console.log(itemData)
+  
       return <StatusTag status={itemData.status} />
     
     }},
     {label: 'category', values: ['category']},
-    {label: 'Qty', values: ['quantity']},
+    {label: 'quantity', values: ['quantity']},
     {label: 'warehouse', values: ['warehouse_name']},
   ];
 
