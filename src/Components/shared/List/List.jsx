@@ -8,13 +8,12 @@ function List({ itemList, columns, actionPath }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
   const [items, setItems] = useState(itemList);
-  //console.log("actionPath", actionPath);
-  //console.log(items);
+ 
   useEffect(() => {
     setItems(itemList);
   }, [itemList]);
   const warehouseNames = itemList.map((item) => item.warehouse_name);
-  // console.log("warehouseNames", warehouseNames);
+ 
   const showDeleteModal = (item) => {
     setItemToDelete(item);
     setIsModalOpen(true);
@@ -63,8 +62,7 @@ function List({ itemList, columns, actionPath }) {
       }
     }
   };
-  //console.log("itemToDelete.item_name", itemToDelete?.item_name);
-  //console.log("itemToDelete.warehouse_name", itemToDelete?.warehouse_name);
+ 
   return (
     <div className="list">
       <div className="list__column-headers">

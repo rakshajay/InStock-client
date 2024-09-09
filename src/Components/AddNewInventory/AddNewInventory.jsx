@@ -37,7 +37,7 @@ function AddNewInventory() {
       quantity: status === "outOfStock" ? 0 : parseInt(formData.quantity), 
       status: status === "outOfStock" ? "Out of Stock" : "In Stock",
     };
-    //console.log("Sending data:", dataToSend);
+   
   
     try {
       const sendData = await axios.post("http://localhost:8080/inventories", dataToSend);

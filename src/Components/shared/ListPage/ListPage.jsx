@@ -24,7 +24,7 @@ function ListPage({itemList, columns, header, singularLabel, actionPath}) {
   }, [search]);
 
   useEffect(() => {
-    //console.log(columns);
+  
   }, [columns])
   
     return (
