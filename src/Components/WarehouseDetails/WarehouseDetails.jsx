@@ -29,7 +29,7 @@ function WarehouseDetails() {
       },
     },
     { label: "category", values: ["category"] },
-    { label: "Qty", values: ["quantity"] },
+    { label: "quantity", values: ["quantity"] },
   ];
 
   const { warehouseId } = useParams();
