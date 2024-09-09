@@ -12,7 +12,7 @@ function AddNewInventory() {
   };
 
   const [formData, setFormData] = useState({
-    warehouse_id: 1,
+    warehouse_id: "",
     item_name: "",
     description: "",
     category: "",
@@ -37,6 +37,10 @@ function AddNewInventory() {
       quantity: status === "outOfStock" ? 0 : parseInt(formData.quantity), 
       status: status === "outOfStock" ? "Out of Stock" : "In Stock",
     };
+
+
+
+
    
   
     try {
@@ -54,7 +58,17 @@ function AddNewInventory() {
       }
     } catch (error) {
       console.error("There was an error adding the item", error);
-      alert("Failed to add item. Please try again.");
+      if (!formData.warehouse_id || 
+          !formData.item_name || 
+          !formData.description ||
+          !formData.category ||
+          !formData.status
+        ) {
+        alert("Please make sure all required fields are filled out.")
+      }
+      if(status != "outOfStock" && formData.quantity === 0){
+        alert("Please provide a quantity greater than 0.")
+      }; 
     }
   };
   
