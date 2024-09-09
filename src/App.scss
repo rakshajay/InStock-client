@@ -2,6 +2,14 @@
 @use "./Styles/variables" as *;
 @use "./Styles/fonts" as *;
 
+// #root{
+//   @include desktop{
+//     max-width: 1280px;
+//     margin: auto;
+//   }
+
+// }
+
 #app__body {
   padding: 0 1.5rem;
 
@@ -11,7 +19,6 @@
 
   @include desktop { 
     margin: auto;
-    padding: 0 8.125rem;
   }
 }
 
@@ -24,6 +31,10 @@
   overflow: hidden;
   @include tablet{
     top: -5.875rem;
+  }
+  @include desktop{
+    max-width: 1280px;
+    margin: auto;
   }
 }
 
