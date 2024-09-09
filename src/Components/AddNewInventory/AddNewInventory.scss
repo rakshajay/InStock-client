@@ -25,6 +25,15 @@
             justify-content: space-evenly;
         }
 
+        &__error-text {
+            p {
+                color: $supporting-color-red;
+            }
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
         &__details {
             display: flex;
             flex-direction: column;
@@ -64,13 +73,11 @@
                 padding: 0.25rem 0.75rem;
                 margin-bottom: 0;
                 border-radius: 1.25rem;
-                border: 1px solid $secondary-color-cloud;
                 @include tablet {
                     height: 2.375rem;
                 }
 
-                &:focus {
-                    border: none;
+                &:active {
                     outline: 0;
                     border: 0.125rem solid $primary-color-instock-indigo-blue;
                 }

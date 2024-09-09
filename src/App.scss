@@ -170,3 +170,12 @@ input {
   }
 }
 
+
+input,
+select,
+textarea {
+  border: 1px solid $secondary-color-cloud;
+  &.error {
+    border: 1px solid $supporting-color-red;
+  }
+}

@@ -3,28 +3,61 @@ import "./AddNewInventory.scss";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Icon } from "../shared/Icon/Icon";
 
 function AddNewInventory() {
-  const [status, setStatus] = useState("inStock");
 
-  const handleStatusChange = (event) => {
-    setStatus(event.target.value);
-  };
+  const [errors, setErrors] = useState({
+    warehouse_id: "",
+    item_name: "",
+    description: "",
+    category: "",
+    status: "",
+    quantity: "",
+  })
+
+  const getError = (errorMessage) => {
+    return (
+      errorMessage && (
+        <div className="inventory-section__error-text">
+          <Icon iconSrc={'/src/Assets/Icons/error-24px.svg'}/> <p>{errorMessage}</p>
+        </div>
+      )
+    )
+  }
 
   const [formData, setFormData] = useState({
     warehouse_id: "",
     item_name: "",
     description: "",
     category: "",
-    status: "",
-    quantity: 0,
+    status: "inStock",
+    quantity: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if(value === '') {
+      handleOnInvalid(name)
+    } else {
+      handleOnInvalid(name, '')
+    }
+
+    if(name === 'quantity' && value === '0' && formData.status === 'inStock') {
+      handleOnInvalid('quantity', "Quantity can't be set 0 if status is In Stock")
+    }
+
     setFormData({
       ...formData,
       [name]: value,
+    });
+  };
+
+  const handleOnInvalid = (fieldName, message = 'This field is required') => {
+    setErrors({
+      ...errors,
+      [fieldName]: message,
     });
   };
 
@@ -34,14 +67,9 @@ function AddNewInventory() {
     const dataToSend = {
       ...formData,
       warehouse_id: parseInt(formData.warehouse_id),
-      quantity: status === "outOfStock" ? 0 : parseInt(formData.quantity), 
-      status: status === "outOfStock" ? "Out of Stock" : "In Stock",
+      quantity: formData.status ? parseInt(formData.quantity) : 0,
+      status: formData.status ? "In Stock": "Out of Stock",
     };
-
-
-
-
-   
   
     try {
       const sendData = await axios.post("http://localhost:8080/inventories", dataToSend);
@@ -125,18 +153,25 @@ function AddNewInventory() {
               placeholder="Item Name"
               value={formData.item_name}
               onChange={handleInputChange}
+              onInvalid={(e) => handleOnInvalid(e, 'This field is required')}
+              required
+              className={errors.item_name ? 'error' : ''}
             />
+            {getError(errors.item_name)}
 
             <label>
               <h3>Description</h3>
             </label>
             <textarea
-              className="inventory-section__details-description"
+              className={`inventory-section__details-description ${errors.description ? 'error' : ''}`}
               name="description"
               placeholder="Please enter a brief item description..."
               value={formData.description}
               onChange={handleInputChange}
+              required
+              onInvalid={(e) => handleOnInvalid(e, 'This field is required')}
             ></textarea>
+            {getError(errors.description)}
 
             <label>
               <h3>Category</h3>
@@ -154,6 +189,7 @@ function AddNewInventory() {
                   </option>
                 ))}
               </select>
+              {getError(errors.category)}
             </label>
           </div>
 
@@ -166,9 +202,9 @@ function AddNewInventory() {
                   <input
                     type="radio"
                     name="status"
-                    value="inStock"
-                    checked={status === "inStock"}
-                    onChange={handleStatusChange}
+                    value={"inStock"}
+                    checked={formData.status === 'inStock'}
+                    onChange={handleInputChange}
                   />
                   <label htmlFor="inStock">In stock</label>
                 </div>
@@ -176,16 +212,16 @@ function AddNewInventory() {
                   <input
                     type="radio"
                     name="status"
-                    value="outOfStock"
-                    checked={status === "outOfStock"}
-                    onChange={handleStatusChange}
+                    value={"outOfStock"}
+                    checked={formData.status === 'outOfStock'}
+                    onChange={handleInputChange}
                   />
                   <label htmlFor="outOfStock">Out of stock</label>
                 </div>
               </div>
             </label>
 
-            {status === "inStock" && (
+            {formData.status === "inStock" && (
               <label>
                 <h3>Quantity</h3>
                 <input
@@ -194,7 +230,10 @@ function AddNewInventory() {
                   placeholder="0"
                   value={formData.quantity}
                   onChange={handleInputChange}
+                  required={formData.status === 'inStock'}
+                  className={`${errors.quantity ? 'error' : ''}`}
                 />
+                {getError(errors.quantity)}
               </label>
             )}
 
