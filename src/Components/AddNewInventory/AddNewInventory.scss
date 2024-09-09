@@ -25,6 +25,15 @@
             justify-content: space-evenly;
         }
 
+        &__error-text {
+            p {
+                color: $supporting-color-red;
+            }
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
         &__details {
             display: flex;
             flex-direction: column;
@@ -69,10 +78,13 @@
                     height: 2.375rem;
                 }
 
-                &:focus {
-                    border: none;
+                &:active {
                     outline: 0;
                     border: 0.125rem solid $primary-color-instock-indigo-blue;
+                }
+
+                &.error {
+                    border: 1px solid $supporting-color-red;
                 }
             }
 

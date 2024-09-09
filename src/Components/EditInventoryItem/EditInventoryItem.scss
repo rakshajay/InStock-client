@@ -55,10 +55,13 @@
                     height: 2.375rem;
                 }
 
-                &:focus {
-                    border: none;
+                &:active {
                     outline: 0;
                     border: 0.125rem solid $primary-color-instock-indigo-blue;
+                }
+
+                .error {
+                    border: 1px solid red;
                 }
             }
 
