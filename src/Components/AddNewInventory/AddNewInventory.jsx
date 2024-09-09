@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Icon } from "../shared/Icon/Icon";
 
 function AddNewInventory() {
-
+  const [status, setStatus] = useState("inStock");
   const [errors, setErrors] = useState({
     warehouse_id: "",
     item_name: "",
@@ -34,6 +34,10 @@ function AddNewInventory() {
     status: "inStock",
     quantity: "",
   });
+
+  const handleStatusChange = (event) => {
+    setStatus(event.target.value);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
