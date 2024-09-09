@@ -29,16 +29,29 @@ function ListPage({itemList, columns, header, singularLabel, actionPath}) {
   
     return (
       <div className="list-page">
-        <div className="list-page__header">
-          <h1>{header}</h1>
-          <div className="list-page__actions">
-          <div><input className="list-page__search input__with-icon" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} /></div>
-            <div><Link to="/inventory/add"><button className="primary-button">+ Add New {singularLabel}</button></Link></div>
+      <div className="list-page__header">
+        <h1>{header}</h1>
+        <div className="list-page__actions">
+          <div>
+            <input
+              className="list-page__search input__with-icon"
+              placeholder="Search..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <div>
+            <Link to={`/${singularLabel}/add`}>
+              <button className="primary-button">
+                + Add New {singularLabel}
+              </button>
+            </Link>
           </div>
         </div>
-
-        <List itemList={filteredList} columns={columns} actionPath={actionPath} />
       </div>
+
+      <List itemList={filteredList} columns={columns} actionPath={actionPath} />
+    </div>
     );
   }
   
