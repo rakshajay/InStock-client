@@ -88,7 +88,7 @@ function AddNewInventory() {
   return (
     <div className="inventory">
       <div className="inventory-heading">
-        <img src={back} alt="back-icon" />
+      <Link to="/inventory"><img src={back} alt="back-icon" /></Link>
         <h1>Add New Inventory Item</h1>
       </div>
 
