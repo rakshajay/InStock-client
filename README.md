@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For this project, I collaborated with an Agile team to develop an Inventory Management System named “InStock,” for a Fortune 500 client. Our goal was to create a scalable, full-stack application using a modern React front-end integrated with a robust Express back-end, addressing performance issues from the client's existing system. We utilized tools like Figma for design specifications and prototyping, ensuring our application closely resembled the provided mockups across all breakpoints. Task management was facilitated through a Jira Scrum board, allowing us to plan, track progress, and communicate effectively about hurdles and blockers. Leveraging technologies such as Node, MySQL, and Knex, alongside Git, GitHub, and npm, we ensured timely delivery of a functional and visually polished product that met all specified requirements without bugs![InStock (1)](https://github.com/user-attachments/assets/875fce6b-cc2c-43a5-9159-6367e959225f)
